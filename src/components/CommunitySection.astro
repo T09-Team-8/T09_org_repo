@@ -1,0 +1,212 @@
+<section class="community" id="community" aria-labelledby="community-heading">
+  <div class="community__inner">
+    <div class="community__copy">
+      <p class="community__eyebrow">01 / THE COMMUNITY</p>
+      <h2 class="community__heading" id="community-heading">GOOD PEOPLE.<br />GREAT IDEAS.</h2>
+      <a class="community__join" href="https://www.instagram.com/kinddesign.cph/">JOIN US</a>
+    </div>
+
+    <div class="community__gallery" aria-label="KindDesign community photos">
+      <div class="community__row community__row--top">
+        <figure class="community__photo community__photo--meetup">
+          <img src="/images/community/community-meetup-event.png" alt="KindDesign meetup event poster in a community space" loading="lazy" />
+        </figure>
+        <figure class="community__photo community__photo--members">
+          <img src="/images/community/community-members.png" alt="Two people together at a KindDesign event" loading="lazy" />
+        </figure>
+      </div>
+      <div class="community__row community__row--bottom">
+        <figure class="community__photo community__photo--space">
+          <img src="/images/community/community-space.png" alt="Plant and interior at a KindDesign meetup space" loading="lazy" />
+        </figure>
+        <figure class="community__photo community__photo--gathering">
+          <img src="/images/community/community-gathering.png" alt="KindDesign community members gathered together" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .community {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 1050px;
+    overflow: hidden;
+    background: #f5f0e0;
+    color: #2b0f13;
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  .community__inner {
+    box-sizing: border-box;
+    width: min(100%, 1681px);
+    min-height: 1050px;
+    margin-inline: auto;
+    padding: 172px 80px 120px;
+    display: grid;
+    grid-template-columns: minmax(0, 551px) minmax(0, 900px);
+    column-gap: 70px;
+  }
+
+  .community__copy {
+    min-width: 0;
+  }
+
+  .community__eyebrow {
+    margin: 0 0 34px;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .community__heading {
+    max-width: 470px;
+    margin: 0 0 52px;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .community__join {
+    box-sizing: border-box;
+    display: inline-flex;
+    width: 147px;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #2b0f13;
+    border-radius: 999px;
+    color: inherit;
+    font-size: 18px;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .community__join:focus-visible {
+    outline: 3px solid #c7d198;
+    outline-offset: 4px;
+  }
+
+  .community__gallery {
+    display: grid;
+    min-width: 0;
+    grid-template-rows: 340px 340px;
+    gap: 26px;
+  }
+
+  .community__row {
+    display: grid;
+    min-width: 0;
+    grid-template-rows: minmax(0, 1fr);
+    gap: 17px;
+  }
+
+  .community__row--top {
+    grid-template-columns: minmax(0, 1fr) 260.667px;
+  }
+
+  .community__row--bottom {
+    grid-template-columns: 260.667px minmax(0, 1fr);
+  }
+
+  .community__photo {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .community__photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .community__photo--meetup img {
+    object-position: center 75%;
+  }
+
+  .community__photo--members img {
+    opacity: 0.9;
+  }
+
+  .community__photo--space img {
+    object-position: center 46%;
+  }
+
+  .community__photo--gathering {
+    container-type: size;
+  }
+
+  .community__photo--gathering img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100cqh;
+    height: 100cqw;
+    max-width: none;
+    object-fit: cover;
+    opacity: 0.9;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  @media (max-width: 1200px) {
+    .community__inner {
+      min-height: 0;
+      padding: clamp(80px, 10vw, 150px) 6vw 80px;
+      grid-template-columns: minmax(250px, 0.75fr) minmax(0, 1.25fr);
+      column-gap: clamp(32px, 5vw, 70px);
+    }
+
+    .community__gallery {
+      grid-template-rows: clamp(250px, 28vw, 340px) clamp(250px, 28vw, 340px);
+    }
+
+    .community__row--top,
+    .community__row--bottom {
+      grid-template-columns: minmax(0, 1fr) minmax(150px, 0.42fr);
+    }
+
+    .community__row--bottom {
+      grid-template-columns: minmax(150px, 0.42fr) minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 760px) {
+    .community__inner {
+      padding: 72px 24px 64px;
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 40px;
+    }
+
+    .community__eyebrow {
+      margin-bottom: 24px;
+      font-size: clamp(22px, 5vw, 30px);
+    }
+
+    .community__heading {
+      margin-bottom: 28px;
+      font-size: clamp(30px, 7vw, 35px);
+    }
+
+    .community__gallery {
+      grid-template-rows: min(54vw, 300px) min(54vw, 300px);
+      gap: 12px;
+    }
+
+    .community__row {
+      gap: 8px;
+    }
+
+    .community__row--top {
+      grid-template-columns: minmax(0, 1fr) minmax(96px, 0.42fr);
+    }
+
+    .community__row--bottom {
+      grid-template-columns: minmax(96px, 0.42fr) minmax(0, 1fr);
+    }
+  }
+</style>

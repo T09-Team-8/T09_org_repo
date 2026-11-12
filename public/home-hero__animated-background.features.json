@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "name": "Moving gradient",
-  "isAnimated": true,
-  "usesMouse": false,
-  "renderScaleAware": true
-}
