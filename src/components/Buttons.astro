@@ -1,0 +1,140 @@
+---
+type Variant = 'hero' | 'pill' | 'community' | 'event_row' | 'follow_events' | 'events_community';
+type Target = '_blank' | '_self' | '_parent' | '_top';
+
+interface Props {
+  href: string;
+  variant?: Variant;
+  target?: Target;
+  rel?: string;
+  ariaLabel?: string;
+}
+
+const {
+  href,
+  variant = 'pill',
+  target,
+  rel,
+  ariaLabel,
+} = Astro.props;
+
+const safeRel = target === '_blank' ? (rel ?? 'noreferrer') : rel;
+---
+
+<a
+  class={`button_${variant}`}
+  href={href}
+  target={target}
+  rel={safeRel}
+  aria-label={ariaLabel}
+>
+  <slot />
+</a>
+
+<style>
+  :is(.button_hero, .button_pill, .button_community, .button_event_row, .button_follow_events, .button_events_community) {
+    box-sizing: border-box;
+    color: inherit;
+    font-family: inherit;
+    text-decoration: none;
+  }
+
+  :is(.button_hero, .button_pill, .button_community, .button_event_row, .button_follow_events, .button_events_community):focus-visible {
+    outline: 3px solid #c7d198;
+    outline-offset: 4px;
+  }
+
+  .button_hero {
+    position: absolute;
+    bottom: 78px;
+    left: 80px;
+    color: #000;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+
+  .button_pill {
+    display: inline-flex;
+    width: 147px;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #2b0f13;
+    border-radius: 999px;
+    color: inherit;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .button_community {
+    position: absolute;
+    right: 0;
+    bottom: 22px;
+    width: 387px;
+    height: 36px;
+    color: #252522;
+    font: 600 24px/1.5 Inter, sans-serif;
+    white-space: nowrap;
+  }
+
+  .button_event_row {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    color: #252522;
+    font: 600 16px/1.2 Inter, sans-serif;
+  }
+
+  .button_event_row :global(.button_arrow) {
+    font: 400 20px/1 Inter, sans-serif;
+  }
+
+  .button_follow_events {
+    display: inline-block;
+    margin-top: 102px;
+    color: #252522;
+    font: 600 13px/1.2 Inter, sans-serif;
+  }
+
+  .button_events_community {
+    display: flex;
+    width: 374px;
+    height: 49px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000;
+    border-radius: 17.29px;
+    color: #2b0e16;
+    font: 400 18.44px/1.2 Inter, sans-serif;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 900px) {
+    .button_community {
+      right: 20px;
+      bottom: 20px;
+      font-size: clamp(14px, 2vw, 20px);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .button_hero {
+      left: 24px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .button_events_community { width: min(100%, 374px); height: 49px; }
+    .button_community {
+      right: 24px;
+      bottom: 26px;
+      left: 30px;
+      font-size: 17px;
+    }
+
+    .button_follow_events {
+      margin-top: 34px;
+    }
+  }
+</style>

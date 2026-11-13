@@ -1,0 +1,863 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Buttons.astro';
+---
+
+<Layout headerVariant="about">
+  <main class="about_page">
+    <section class="about_hero" aria-label="About KindDesign">
+      <img class="about_hero_image" src="/images/about/hero-figma-export.png" alt="A community gathering in a modern interior" />
+      
+    </section>
+
+    <section class="community_collage" aria-label="Welcome to the KindDesign community">
+      <div class="community_collage_left">
+        <div class="community_collage_wordmark_frame" aria-hidden="true">
+          <div class="community_collage_wordmark_outer">
+            <div class="community_collage_wordmark_full">
+              <img class="community_collage_wordmark" src="/images/about/kinddesign-wordmark.svg" alt="KindDesign" />
+            </div>
+          </div>
+        </div>
+        <div class="community_collage_message">
+          <h1>Welcome</h1>
+          <p>Whether you're just starting out, finding your way or already deep into your creative journey, there's a place for you here.<br />Because creativity is better when it's <span>shared.</span></p>
+        </div>
+      </div>
+
+      <img class="community_collage_image_discussion" src="/images/about/collage-discussion-crop.png" alt="Two creatives sharing a conversation at a KindDesign gathering" />
+      <img class="community_collage_image_portrait" src="/images/about/collage-portrait-crop.png" alt="Creative community member wearing orange" />
+      <img class="community_collage_image_abstract" src="/images/about/collage-abstract-crop.png" alt="Creatives discussing a design on a laptop" />
+      <img class="community_collage_image_arches" src="/images/about/collage-arches-crop.png" alt="Community members meeting at an event" />
+    </section>
+
+    <section class="about_story">
+      <h2>About us</h2>
+      <div class="about_story_copy">
+        <p>We are a CPH based creative community with a passion for bringing people together through curiosity, creativity and connection.</p>
+        <p>We believe in good people, fresh perspectives and the magic that happens when different mindsets meet.</p>
+        <p>Through meetups, events and shared experiences, we create space to connect, exchange ideas and inspire one another.</p>
+        <p>Whether you're a designer, a creative thinker or simply curious, you're welcome here.</p>
+      </div>
+    </section>
+
+    <section class="join_community" aria-labelledby="join-community-heading">
+      <img class="join_community_image" src="/images/about/join-photo-crop.png" alt="KindDesign community members connecting at an event" />
+      <div class="join_community_content">
+        <span class="join_community_accent" aria-hidden="true"></span>
+        <h2 id="join-community-heading">GOOD PEOPLE.<br />GREAT IDEAS.<br />KIND DESIGN.</h2>
+        <Button href="https://www.instagram.com/kinddesign.cph/" target="_blank" variant="community">JOIN THE COMMUNITY <span aria-hidden="true">↗</span></Button>
+      </div>
+    </section>
+
+    <section class="events_and_about" aria-label="About KindDesign and upcoming events">
+      <div class="events_and_about_content">
+        <p class="events_and_about_eyebrow">KINDDESIGN CPH</p>
+        <h2>Upcoming<br />events</h2>
+        <p class="events_and_about_description">KindDesign promotes events and communicates with members primarily through Instagram and LinkedIn.</p>
+        <ul class="events_and_about_links">
+          <li><Button href="https://www.instagram.com/kinddesign.cph/" target="_blank" variant="event_row">SIGN UP <span class="button_arrow" aria-hidden="true">↗</span></Button></li>
+          <li><Button href="/#talks" variant="event_row">TALKS <span class="button_arrow" aria-hidden="true">↗</span></Button></li>
+          <li><Button href="https://www.instagram.com/kinddesign.cph/" target="_blank" variant="event_row">KINDLIFE <span class="button_arrow" aria-hidden="true">↗</span></Button></li>
+        </ul>
+        <Button href="https://www.instagram.com/kinddesign.cph/" target="_blank" variant="follow_events">FOLLOW EVENTS ON INSTAGRAM</Button>
+      </div>
+      <div class="events_and_about_visual" aria-hidden="true">
+        <img src="/images/about/events-flower.png" alt="" />
+        <span>KindDesign</span>
+      </div>
+      <div class="events_and_about_light" aria-hidden="true"></div>
+    </section>
+
+    <section class="about_contact" aria-label="Connect with KindDesign">
+      <div class="about_contact_item">
+        <h2>LETS CONNECT</h2>
+        <p>Meet like-minded creatives.</p>
+      </div>
+      <div class="about_contact_item">
+        <h2>INSPIRE</h2>
+        <p>Exchange ideas and new perspectives.</p>
+      </div>
+    </section>
+
+    <footer class="about_footer">
+      <div class="about_footer_brand">
+        <a href="/" class="about_footer_logo">Kind Design</a>
+        <p>COMMUNITY / EVENTS / COLLABORATIONS</p>
+      </div>
+      <div class="about_footer_contact">
+        <h2>FIND US</h2>
+        <p>Share, learn and build together.</p>
+        <a href="https://www.instagram.com/kinddesign.cph/" target="_blank" rel="noreferrer">INSTAGRAM <span aria-hidden="true">↗</span></a>
+        <a href="https://www.linkedin.com/company/kinddesign-cph/" target="_blank" rel="noreferrer">LINKEDIN <span aria-hidden="true">↗</span></a>
+        <a href="mailto:kinddesign.cph@gmail.com">KINDDESIGN.CPH@GMAIL.COM</a>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  .about_page {
+    --cream: #f6efd7;
+    --brown: #2b0f13;
+    --yellow: #f4f090;
+    --blue: #cbebfa;
+    width: 100%;
+    overflow: hidden;
+    color: #252522;
+    background: var(--cream);
+  }
+
+  .about_hero {
+    position: relative;
+    height: calc(100svh - 147px);
+    min-height: 0;
+    overflow: hidden;
+    background: #d8d6d0;
+  }
+
+  .about_hero_image {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: calc(100% + 198px);
+    object-fit: cover;
+    object-position: center 43%;
+    opacity: 0.8;
+  }
+.community_collage {
+    position: relative;
+    height: 1178px;
+    overflow: hidden;
+    background: var(--cream);
+  }
+
+  .community_collage_left {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 33.77%;
+    background: var(--cream);
+  }
+
+  .community_collage_wordmark_frame {
+    position: absolute;
+    top: 74.12px;
+    left: 16.57px;
+    display: flex;
+    width: 512.858px;
+    height: 224.758px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .community_collage_wordmark_outer {
+    position: relative;
+    flex: none;
+    width: 500px;
+    height: 187px;
+    transform: rotate(-4.39deg);
+  }
+
+  .community_collage_wordmark_full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 469px;
+    height: 258.145px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .community_collage_wordmark {
+    display: block;
+    flex: none;
+    width: 458.559px;
+    height: 237.278px;
+    object-fit: fill;
+    transform: rotate(-2.64deg);
+  }
+
+  :is(.community_collage_image_discussion, .community_collage_image_portrait, .community_collage_image_abstract, .community_collage_image_arches) {
+    position: absolute;
+    display: block;
+    object-fit: cover;
+  }
+
+  .community_collage_image_discussion {
+    top: 0;
+    left: calc(33.76% - 15px);
+    width: 33.34%;
+    height: 638.173px;
+  }
+
+  .community_collage_image_portrait {
+    top: 0;
+    left: calc(67.1% - 15px);
+    width: 33.75%;
+    height: 436.831px;
+    opacity: 0.95;
+  }
+
+  .community_collage_image_abstract {
+    top: 638.17px;
+    left: calc(33.76% - 15px);
+    width: 33.34%;
+    height: 542.801px;
+  }
+
+  .community_collage_image_arches {
+    top: 436.83px;
+    left: calc(67.1% - 15px);
+    width: 33.75%;
+    height: 744.143px;
+  }
+
+  .community_collage_message {
+    position: absolute;
+    z-index: 1;
+    top: 456.85px;
+    left: -42.08px;
+    box-sizing: border-box;
+    width: 594.608px;
+    height: 724.127px;
+    background: rgb(169 155 146 / 90%);
+  }
+
+  .community_collage_message h1 {
+    position: absolute;
+    top: 52.15px;
+    left: 84.08px;
+    display: flex;
+    box-sizing: border-box;
+    width: 405.023px;
+    height: 88px;
+    align-items: center;
+    margin: 0;
+    padding: 10px;
+    color: #655a5f;
+    font: 400 56.53px/1.2 "Antonio", sans-serif;
+  }
+
+  .community_collage_message p {
+    position: absolute;
+    top: 169.15px;
+    left: 90.08px;
+    width: 389px;
+    margin: 0;
+    color: #000;
+    font: 400 35px/50px "Inter", sans-serif;
+  }
+
+  .community_collage_message p span {
+    font-size: 40px;
+  }
+
+  .about_story {
+    position: relative;
+    display: flex;
+    min-height: 563px;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    padding: 77px 7.9% 48px;
+    color: var(--cream);
+    text-align: center;
+    background: rgb(61 47 45 / 90%);
+  }
+
+  .about_story h2 {
+    margin: 0 0 28px;
+    font: 400 35px/1.2 "Antonio", sans-serif;
+  }
+
+  .about_story_copy {
+    width: min(100%, 1417px);
+  }
+
+  .about_story_copy p {
+    margin: 0 0 12px;
+    font: 400 32px/1.2 "Inter", sans-serif;
+  }
+
+  .about_story_copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .join_community {
+    position: relative;
+    display: flex;
+    height: 828px;
+    overflow: hidden;
+    background: var(--yellow);
+  }
+
+  .join_community_image {
+    position: absolute;
+    top: 0;
+    left: max(-369px, calc((100vw - 1681px) / 2 - 369px));
+    width: min(74.3vw, 1249px);
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .join_community_content {
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 1722px;
+    height: 828px;
+  }
+
+  .join_community_accent {
+    position: absolute;
+    top: 492px;
+    left: 818px;
+    width: 92px;
+    height: 5px;
+    background: #f4f07a;
+  }
+
+  .join_community_content h2 {
+    position: absolute;
+    top: 244px;
+    left: 1218px;
+    width: 221px;
+    margin: 0;
+    color: #000;
+    font: 400 40px/1.5 "Inter", sans-serif;
+  }
+
+  .events_and_about {
+    position: relative;
+    height: 873px;
+    overflow: hidden;
+    background: var(--blue);
+  }
+
+  .events_and_about_content {
+    position: absolute;
+    inset: 0 auto 0 -16px;
+    z-index: 1;
+    box-sizing: border-box;
+    width: 565px;
+    padding: 118px 0 0 90px;
+  }
+
+  .events_and_about_eyebrow {
+    margin: 0 0 24px;
+    font: 600 14px/1.2 "Inter", sans-serif;
+  }
+
+  .events_and_about_content h2 {
+    margin: 0 0 61px;
+    font: 400 40px/1.2 "Inter", sans-serif;
+  }
+
+  .events_and_about_description {
+    max-width: 380px;
+    margin: 0 0 67px;
+    font: 400 18px/1.25 "Inter", sans-serif;
+  }
+
+  .events_and_about_links {
+    width: min(395px, 100%);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .events_and_about_links li {
+    height: 70px;
+    border-top: 1px solid rgb(135 145 150 / 35%);
+  }
+
+  .events_and_about_links li:last-child {
+    border-bottom: 1px solid rgb(135 145 150 / 35%);
+  }
+
+  .events_and_about_visual {
+    position: absolute;
+    top: 123px;
+    right: 6.5%;
+    display: grid;
+    width: min(40.2vw, 676px);
+    aspect-ratio: 1;
+    place-items: center;
+    background: linear-gradient(180deg, rgb(255 255 255 / 70%), rgb(255 255 255 / 0%));
+  }
+
+  .events_and_about_visual img {
+    position: absolute;
+    top: 13.76%;
+    left: 20.12%;
+    width: 59.3%;
+    height: 54.2%;
+    object-fit: cover;
+    opacity: 0.6;
+    box-shadow: 0 4px 60px rgb(0 0 0 / 25%);
+  }
+
+  .events_and_about_visual span {
+    position: absolute;
+    top: 35.36%;
+    left: 25.59%;
+    z-index: 1;
+    width: 459.202px;
+    height: 85.953px;
+    margin: 0;
+    color: rgb(246 239 215 / 60%);
+    font: 700 61.227px/normal "Merriweather", serif;
+    text-shadow: 0 4px 60px rgb(0 0 0 / 25%);
+  }
+
+  .about_contact {
+    display: flex;
+    min-height: 649px;
+    box-sizing: border-box;
+    align-items: flex-end;
+    gap: 120px;
+    padding: 0 50px 68px;
+    background: var(--cream);
+  }
+
+  .about_contact_item {
+    width: 264px;
+  }
+
+  .about_contact_item h2 {
+    margin: 0 0 3px;
+    font: 700 36px/40px "Inter", sans-serif;
+  }
+
+  .about_contact_item p {
+    margin: 0;
+    font: 400 24px/40px "Roboto", sans-serif;
+  }
+
+  .about_footer {
+    position: relative;
+    display: grid;
+    min-height: 373px;
+    grid-template-columns: 64.72% 35.28%;
+    color: #fff;
+    background: var(--brown);
+  }
+
+  .about_footer_brand {
+    box-sizing: border-box;
+    padding: 49px 42px;
+    background: rgb(0 0 0 / 90%);
+  }
+
+  .about_footer_logo {
+    display: inline-block;
+    margin: 0 0 35px 8px;
+    padding: 0 5px;
+    color: #fff;
+    background: #000;
+    font: 400 31px/36px "Questrial", sans-serif;
+    text-decoration: none;
+  }
+
+  .about_footer_brand p {
+    margin: 0;
+    font: 400 13.535px/1.2 "Inter", sans-serif;
+  }
+
+  .about_footer_contact {
+    box-sizing: border-box;
+    padding: 59px 40px;
+    background: url('/images/about/footer-contact-background.svg') center / cover no-repeat, var(--brown);
+  }
+
+  .about_footer_contact h2 {
+    margin: 0;
+    font: 700 36px/40px "Inter", sans-serif;
+  }
+
+  .about_footer_contact p {
+    margin: 0 0 37px;
+    font: 400 24px/40px "Roboto", sans-serif;
+  }
+
+  .about_footer_contact a {
+    display: block;
+    margin: 0 0 28px 7px;
+    color: #fff;
+    font: 600 14.576px/1.2 "Inter", sans-serif;
+    text-decoration: none;
+  }
+
+  @media (max-width: 900px) {
+    .about_hero {
+      height: calc(100svh - 147px);
+      min-height: 0;
+    }
+
+    .community_collage_wordmark_frame {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: min(80%, 500px);
+      height: 150px;
+      margin: 20px auto 10px;
+    }
+
+    .community_collage_wordmark_outer {
+      width: 100%;
+      height: 100%;
+      transform: none;
+    }
+
+    .community_collage_wordmark_full {
+      width: 100%;
+      height: 100%;
+    }
+
+    .community_collage_wordmark {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: none;
+    }
+
+    .community_collage {
+      display: grid;
+      height: auto;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: auto 38vh 42vh 34vh;
+      overflow: visible;
+    }
+
+    .community_collage_left {
+      position: relative;
+      grid-column: 1 / -1;
+      width: auto;
+      min-height: 390px;
+    }
+
+
+    .community_collage_message {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      margin-top: 0;
+      padding: 24px;
+    }
+
+    .community_collage_message h1 {
+      position: relative;
+      top: auto;
+      left: auto;
+      display: block;
+      width: auto;
+      height: auto;
+      margin-bottom: 18px;
+      padding: 0;
+      font-size: 44px;
+    }
+
+    .community_collage_message p {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: auto;
+      font-size: clamp(19px, 3.4vw, 28px);
+      line-height: 1.4;
+    }
+
+    .community_collage_image_discussion,
+    .community_collage_image_portrait,
+    .community_collage_image_abstract,
+    .community_collage_image_arches {
+      position: relative;
+      inset: auto;
+      width: 100%;
+      height: 100%;
+    }
+
+    .community_collage_image_discussion { grid-column: 1; grid-row: 2; }
+    .community_collage_image_portrait { grid-column: 2; grid-row: 2; }
+    .community_collage_image_abstract { grid-column: 1; grid-row: 3; }
+    .community_collage_image_arches { grid-column: 2; grid-row: 3; }
+
+    .about_story {
+      min-height: 520px;
+      padding: 56px 8%;
+    }
+
+    .about_story_copy p {
+      font-size: clamp(20px, 3vw, 27px);
+    }
+
+    .join_community {
+      height: min(62vw, 700px);
+      min-height: 480px;
+    }
+
+    .join_community_image {
+      left: -20%;
+      width: 72%;
+    }
+
+    .join_community_content {
+      width: 48%;
+    }
+
+    .join_community_content h2 {
+      top: 26%;
+      left: 38%;
+      font-size: clamp(27px, 4vw, 38px);
+    }
+
+    .join_community_accent {
+      display: none;
+    }
+
+    .events_and_about {
+      height: 760px;
+    }
+
+    .events_and_about_content {
+      width: 48%;
+      padding-left: 5%;
+    }
+
+    .events_and_about_visual {
+      top: 160px;
+      right: 4%;
+      width: 43vw;
+    }
+
+    .about_contact {
+      min-height: 420px;
+      gap: 48px;
+      padding: 0 28px 48px;
+    }
+
+    .about_footer {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 700px) {
+    .about_hero {
+      height: calc(100svh - 94px);
+      min-height: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .about_hero {
+      height: calc(100svh - 94px);
+      min-height: 0;
+    }
+
+    .about_hero_image {
+      height: 100%;
+      object-position: 52% center;
+    }
+.community_collage {
+      grid-template-rows: auto 32vh 34vh;
+    }
+
+    .community_collage_left {
+      min-height: 0;
+    }
+
+    .community_collage_wordmark_frame {
+      width: min(90%, 420px);
+      height: 132px;
+      margin: 26px auto 18px;
+    }
+
+    .community_collage_message {
+      margin-top: 0;
+      padding: 22px 24px 28px;
+    }
+
+    .community_collage_message h1 {
+      margin-bottom: 12px;
+      font-size: 38px;
+    }
+
+    .community_collage_message p {
+      font-size: 18px;
+    }
+
+    .community_collage_image_portrait,
+    .community_collage_image_arches {
+      display: none;
+    }
+
+    .community_collage_image_abstract {
+      grid-column: 2;
+      grid-row: 3;
+    }
+
+    .community_collage_image_discussion {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+
+    .about_story {
+      min-height: 0;
+      padding: 48px 24px;
+    }
+
+    .about_story h2 {
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+
+    .about_story_copy p {
+      margin-bottom: 14px;
+      font-size: 18px;
+    }
+
+    .join_community {
+      display: flex;
+      height: auto;
+      min-height: 0;
+      flex-direction: column;
+    }
+
+    .join_community_image {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      height: 62vw;
+      min-height: 250px;
+    }
+
+    .join_community_content {
+      position: relative;
+      inset: auto;
+      left: auto;
+      width: 100%;
+      height: auto;
+      min-height: 360px;
+    }
+
+    .join_community_content h2 {
+      top: 34px;
+      left: 30px;
+      width: auto;
+      font-size: 32px;
+      line-height: 1.35;
+    }
+
+    .events_and_about {
+      display: flex;
+      height: auto;
+      min-height: 760px;
+      flex-direction: column;
+    }
+
+    .events_and_about_content {
+      position: relative;
+      width: 100%;
+      padding: 58px 24px 0;
+    }
+
+    .events_and_about_description {
+      margin-bottom: 35px;
+    }
+
+    .events_and_about_visual {
+      position: relative;
+      top: auto;
+      right: auto;
+      align-self: center;
+      width: min(85vw, 400px);
+      margin: 36px 0 48px;
+    }
+
+    .about_contact {
+      min-height: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 36px;
+      padding: 56px 24px;
+    }
+
+    .about_contact_item h2 {
+      font-size: 28px;
+      line-height: 34px;
+    }
+
+    .about_contact_item p {
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .about_footer {
+      grid-template-columns: 1fr;
+    }
+
+    .about_footer_brand,
+    .about_footer_contact {
+      min-height: 210px;
+      padding: 36px 24px;
+    }
+
+    .about_footer_logo {
+      margin: 0 0 24px;
+    }
+
+    .about_footer_contact h2 {
+      font-size: 29px;
+      line-height: 36px;
+    }
+
+    .about_footer_contact p {
+      margin-bottom: 26px;
+      font-size: 19px;
+    }
+
+    .about_footer_contact a {
+      margin-bottom: 18px;
+    }
+  }
+
+  @media (min-width: 901px) {
+    .about_hero {
+      height: 924px;
+    }
+
+    .community_collage {
+      height: 1178px;
+    }
+
+    .about_story {
+      height: 563px;
+      min-height: 0;
+    }
+
+    .join_community {
+      height: 828px;
+      margin-top: -5px;
+    }
+
+    .events_and_about {
+      height: 873px;
+      margin-top: -17px;
+    }
+
+    .about_contact {
+      height: 649px;
+      min-height: 0;
+    }
+
+    .about_footer {
+      height: 373px;
+      min-height: 0;
+    }
+  }
+</style>

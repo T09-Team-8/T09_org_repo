@@ -1,0 +1,56 @@
+<style is:global>
+  .navigation_hover_link {
+    position: relative;
+  }
+
+  .navigation_hover_link::after {
+    position: absolute;
+    right: 10%;
+    bottom: 1px;
+    left: 2px;
+    height: 1px;
+    background: currentColor;
+    content: "";
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+  }
+
+  .navigation_hover_link:hover::after,
+  .navigation_hover_link:focus-visible::after {
+    opacity: 1;
+  }
+
+  :is(.community_photo, .community_photo_meetup, .community_photo_members, .community_photo_space, .community_photo_gathering, .events_photo, .events_photo_portrait, .events_photo_feature, .events_photo_calendar)::after {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    background: rgb(0 0 0 / 80%);
+    content: "";
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease-out;
+  }
+
+  :is(.community_photo, .community_photo_meetup, .community_photo_members, .community_photo_space, .community_photo_gathering, .events_photo, .events_photo_portrait, .events_photo_feature, .events_photo_calendar):hover::after {
+    opacity: 1;
+  }
+
+  :is(.button_pill, .button_events_community) {
+    background-color: transparent;
+    transition: background-color 200ms ease-out, color 200ms ease-out;
+  }
+
+  :is(.button_pill, .button_events_community):hover,
+  :is(.button_pill, .button_events_community):focus-visible {
+    background-color: rgb(202 234 248 / 80%);
+    color: #000;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .navigation_hover_link::after,
+    :is(.community_photo, .community_photo_meetup, .community_photo_members, .community_photo_space, .community_photo_gathering, .events_photo, .events_photo_portrait, .events_photo_feature, .events_photo_calendar)::after,
+    :is(.button_pill, .button_events_community) {
+      transition: none;
+    }
+  }
+</style>

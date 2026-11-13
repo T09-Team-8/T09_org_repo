@@ -1,0 +1,37 @@
+---
+const social = { instagram: 'https://www.instagram.com/kinddesign.cph/', linkedin: 'https://www.linkedin.com/company/kinddesign-cph/' };
+---
+<section class="contact" id="contact" aria-label="Connect with KindDesign">
+  <div class="contact_connect">
+    <div class="contact_column"><h2>LETS CONNECT</h2><p>Meet like-minded creatives.</p></div>
+    <div class="contact_column"><h2>INSPIRE</h2><p>Exchange ideas and new<br />perspectives.</p></div>
+  </div>
+  <div class="contact_find">
+    <h2>FIND US</h2><p>Share, learn and build together.</p>
+    <nav aria-label="KindDesign contact links">
+      <a href={social.instagram} target="_blank" rel="noreferrer">INSTAGRAM ↗</a>
+      <a href={social.linkedin} target="_blank" rel="noreferrer">LINKEDIN ↗</a>
+      <a href="mailto:kinddesign.cph@gmail.com">KINDDESIGN.CPH@GMAIL.COM</a>
+    </nav>
+  </div>
+</section>
+<style>
+  .contact { display: grid; grid-template-columns: 62.88% 37.12%; box-sizing: border-box; width: 100%; height: calc(100svh - var(--site-header-height)); min-height: 0; background: #2b0f13; color: #fff; font-family: Inter, Arial, sans-serif; }
+  .contact_connect { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; box-sizing: border-box; padding: 72px clamp(32px, 4.76vw, 80px); background: #caeaf8; color: #000; }
+  .contact_column h2, .contact_find h2 { margin: 0; font-size: clamp(20px, 2.14vw, 36px); font-weight: 700; line-height: 40px; }
+  .contact_column p, .contact_find p { margin: 0; font-size: clamp(15px, 1.43vw, 24px); line-height: 40px; }
+  .contact_find { box-sizing: border-box; padding: 72px clamp(30px, 3.8vw, 64px); background: #2b0f13; }
+  .contact_find nav { display: grid; gap: 33px; margin-top: 78px; }
+  .contact_find a { width: fit-content; color: #fff; font-size: 14.5px; font-weight: 600; text-decoration: none; }
+  .contact_find a:focus-visible { outline: 2px solid #c5e9fb; outline-offset: 4px; }
+  @media (min-width: 761px) {
+    .contact { height: 504px; }
+    .contact_connect { display: block; padding: 0; }
+    .contact_column { position: absolute; top: 72px; }
+    .contact_column:first-child { left: 80px; width: 320px; }
+    .contact_column:nth-child(2) { left: 520px; width: 360px; }
+    .contact_find { padding: 72px 0 0 64px; }
+  }
+  @media (max-width: 760px) { .contact { height: auto; min-height: 0; grid-template-columns: 1fr; } .contact_connect { min-height: 240px; padding: 44px 24px; gap: 20px; } .contact_find { min-height: 300px; padding: 44px 24px; } .contact_find nav { gap: 20px; margin-top: 30px; } }
+</style>
+
