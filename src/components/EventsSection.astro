@@ -13,24 +13,24 @@ const instagram = 'https://www.instagram.com/kinddesign.cph/';
   </div>
   <div class="events_gallery" role="group" aria-label="KindDesign event images">
     <div class="events_row_top">
-      <figure class="events_photo"><img src="/images/events/events-item-01.jpg" alt="KindDesign event attendees together" loading="lazy" /></figure>
-      <figure class="events_photo"><img src="/images/events/events-item-02.jpg" alt="KindDesign community stickers and visual identity" loading="lazy" /></figure>
-      <figure class="events_photo_portrait"><img src="/images/events/events-shivalini.jpg" alt="Shivalini Kumar speaking about creative identity" loading="lazy" /></figure>
+      <figure class="events_photo"><img src={import.meta.env.BASE_URL + "/images/events/events-item-01.jpg"} alt="KindDesign event attendees together" loading="lazy" /></figure>
+      <figure class="events_photo"><img src={import.meta.env.BASE_URL + "/images/events/events-item-02.jpg"} alt="KindDesign community stickers and visual identity" loading="lazy" /></figure>
+      <figure class="events_photo_portrait"><img src={import.meta.env.BASE_URL + "/images/events/events-shivalini.jpg"} alt="Shivalini Kumar speaking about creative identity" loading="lazy" /></figure>
     </div>
     <div class="events_row_middle">
-      <figure class="events_photo_feature"><img src="/images/events/events-feature.jpg" alt="KindDesign event announcement and event information" loading="lazy" /></figure>
+      <figure class="events_photo_feature"><img src={import.meta.env.BASE_URL + "/images/events/events-feature.jpg"} alt="KindDesign event announcement and event information" loading="lazy" /></figure>
       <figure class="events_photo_calendar">
         <div class="events_calendar_rotation" aria-hidden="true">
-          <img src="/images/events/events-feature.jpg" alt="" loading="lazy" />
+          <img src={import.meta.env.BASE_URL + "/images/events/events-feature.jpg"} alt="" loading="lazy" />
         </div>
         <div class="events_calendar_backing" aria-hidden="true"></div>
         <a href={instagram} target="_blank" rel="noreferrer">EVENT CALENDAR ↗</a>
       </figure>
     </div>
     <div class="events_row_bottom">
-      <figure class="events_photo"><img src="/images/events/events-item-04.jpg" alt="KindDesign community sharing an event" loading="lazy" /></figure>
-      <figure class="events_photo"><img src="/images/events/events-item-05.jpg" alt="A KindDesign speaker at an event" loading="lazy" /></figure>
-      <figure class="events_photo"><img src="/images/events/events-item-06.jpg" alt="KindDesign event space and creative materials" loading="lazy" /></figure>
+      <figure class="events_photo"><img src={import.meta.env.BASE_URL + "/images/events/events-item-04.jpg"} alt="KindDesign community sharing an event" loading="lazy" /></figure>
+      <figure class="events_photo"><img src={import.meta.env.BASE_URL + "/images/events/events-item-05.jpg"} alt="A KindDesign speaker at an event" loading="lazy" /></figure>
+      <figure class="events_photo"><img src={import.meta.env.BASE_URL + "/images/events/events-item-06.jpg"} alt="KindDesign event space and creative materials" loading="lazy" /></figure>
     </div>
   </div>
 </section>
