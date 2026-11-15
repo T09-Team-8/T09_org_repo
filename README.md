@@ -41,6 +41,12 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## GitHub Pages
+
+In the repository's **Settings → Pages**, set the build and deployment source to
+**GitHub Actions**. The deployment workflow builds Astro on pushes to `main` and
+uses the Pages base path for project sites or custom domains.
+
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

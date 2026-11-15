@@ -13,19 +13,19 @@ import Button from './Buttons.astro';
     <div class="community_gallery" aria-label="KindDesign community photos">
       <div class="community_row_top">
         <figure class="community_photo_meetup">
-          <img src="/images/community/community-meetup-event.png" alt="KindDesign meetup event poster in a community space" loading="lazy" />
+          <img src={`${import.meta.env.BASE_URL}images/community/community-meetup-event.png`} alt="KindDesign meetup event poster in a community space" loading="lazy" />
         </figure>
         <figure class="community_photo_members">
-          <img src="/images/community/community-members.png" alt="Two people together at a KindDesign event" loading="lazy" />
+          <img src={`${import.meta.env.BASE_URL}images/community/community-members.png`} alt="Two people together at a KindDesign event" loading="lazy" />
         </figure>
       </div>
       <div class="community_row_bottom">
         <figure class="community_photo_space">
-          <img src="/images/community/community-space.png" alt="Plant and interior at a KindDesign meetup space" loading="lazy" />
+          <img src={`${import.meta.env.BASE_URL}images/community/community-space.png`} alt="Plant and interior at a KindDesign meetup space" loading="lazy" />
         </figure>
         <figure class="community_photo_gathering">
           <div class="community_gathering_rotation">
-            <img src="/images/community/community-gathering.png" alt="KindDesign community members gathered together" loading="lazy" />
+            <img src={`${import.meta.env.BASE_URL}images/community/community-gathering.png`} alt="KindDesign community members gathered together" loading="lazy" />
           </div>
         </figure>
       </div>
