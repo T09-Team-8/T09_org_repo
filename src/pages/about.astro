@@ -6,7 +6,7 @@ import Button from '../components/Buttons.astro';
 <Layout headerVariant="about">
   <main class="about_page">
     <section class="about_hero" aria-label="About KindDesign">
-      <img class="about_hero_image" src="/images/about/hero-figma-export.png" alt="A community gathering in a modern interior" />
+      <img class="about_hero_image" src={import.meta.env.BASE_URL + "/images/about/hero-figma-export.png"} alt="A community gathering in a modern interior" />
       
     </section>
 
@@ -15,7 +15,7 @@ import Button from '../components/Buttons.astro';
         <div class="community_collage_wordmark_frame" aria-hidden="true">
           <div class="community_collage_wordmark_outer">
             <div class="community_collage_wordmark_full">
-              <img class="community_collage_wordmark" src="/images/about/kinddesign-wordmark.svg" alt="KindDesign" />
+              <img class="community_collage_wordmark" src={import.meta.env.BASE_URL + "/images/about/kinddesign-wordmark.svg"} alt="KindDesign" />
             </div>
           </div>
         </div>
@@ -25,10 +25,10 @@ import Button from '../components/Buttons.astro';
         </div>
       </div>
 
-      <img class="community_collage_image_discussion" src="/images/about/collage-discussion-crop.png" alt="Two creatives sharing a conversation at a KindDesign gathering" />
-      <img class="community_collage_image_portrait" src="/images/about/collage-portrait-crop.png" alt="Creative community member wearing orange" />
-      <img class="community_collage_image_abstract" src="/images/about/collage-abstract-crop.png" alt="Creatives discussing a design on a laptop" />
-      <img class="community_collage_image_arches" src="/images/about/collage-arches-crop.png" alt="Community members meeting at an event" />
+      <img class="community_collage_image_discussion" src={import.meta.env.BASE_URL + "/images/about/collage-discussion-crop.png"} alt="Two creatives sharing a conversation at a KindDesign gathering" />
+      <img class="community_collage_image_portrait" src={import.meta.env.BASE_URL + "/images/about/collage-portrait-crop.png"} alt="Creative community member wearing orange" />
+      <img class="community_collage_image_abstract" src={import.meta.env.BASE_URL + "/images/about/collage-abstract-crop.png"} alt="Creatives discussing a design on a laptop" />
+      <img class="community_collage_image_arches" src={import.meta.env.BASE_URL + "/images/about/collage-arches-crop.png"} alt="Community members meeting at an event" />
     </section>
 
     <section class="about_story">
@@ -42,7 +42,7 @@ import Button from '../components/Buttons.astro';
     </section>
 
     <section class="join_community" aria-labelledby="join-community-heading">
-      <img class="join_community_image" src="/images/about/join-photo-crop.png" alt="KindDesign community members connecting at an event" />
+      <img class="join_community_image" src={import.meta.env.BASE_URL + "/images/about/join-photo-crop.png"} alt="KindDesign community members connecting at an event" />
       <div class="join_community_content">
         <span class="join_community_accent" aria-hidden="true"></span>
         <h2 id="join-community-heading">GOOD PEOPLE.<br />GREAT IDEAS.<br />KIND DESIGN.</h2>
@@ -57,13 +57,13 @@ import Button from '../components/Buttons.astro';
         <p class="events_and_about_description">KindDesign promotes events and communicates with members primarily through Instagram and LinkedIn.</p>
         <ul class="events_and_about_links">
           <li><Button href="https://www.instagram.com/kinddesign.cph/" target="_blank" variant="event_row">SIGN UP <span class="button_arrow" aria-hidden="true">↗</span></Button></li>
-          <li><Button href="/#talks" variant="event_row">TALKS <span class="button_arrow" aria-hidden="true">↗</span></Button></li>
+          <li><Button href={import.meta.env.BASE_URL + "/#talks"} variant="event_row">TALKS <span class="button_arrow" aria-hidden="true">↗</span></Button></li>
           <li><Button href="https://www.instagram.com/kinddesign.cph/" target="_blank" variant="event_row">KINDLIFE <span class="button_arrow" aria-hidden="true">↗</span></Button></li>
         </ul>
         <Button href="https://www.instagram.com/kinddesign.cph/" target="_blank" variant="follow_events">FOLLOW EVENTS ON INSTAGRAM</Button>
       </div>
       <div class="events_and_about_visual" aria-hidden="true">
-        <img src="/images/about/events-flower.png" alt="" />
+        <img src={import.meta.env.BASE_URL + "/images/about/events-flower.png"} alt="" />
         <span>KindDesign</span>
       </div>
       <div class="events_and_about_light" aria-hidden="true"></div>
@@ -82,7 +82,7 @@ import Button from '../components/Buttons.astro';
 
     <footer class="about_footer">
       <div class="about_footer_brand">
-        <a href="/" class="about_footer_logo">Kind Design</a>
+        <a href={import.meta.env.BASE_URL + "/"} class="about_footer_logo">Kind Design</a>
         <p>COMMUNITY / EVENTS / COLLABORATIONS</p>
       </div>
       <div class="about_footer_contact">
