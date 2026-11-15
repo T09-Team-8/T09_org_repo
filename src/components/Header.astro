@@ -1,119 +1,59 @@
-
-<header class="site_header">
-  <a class="brand" href={import.meta.env.BASE_URL + "/"} aria-label="Kind Design home">
-    <img
-      src={import.meta.env.BASE_URL + "/kind-design-logo.png"}
-      alt="Kind Design"
-      width="152"
-      height="93"
-    />
+---
+import KindlifeHeaderShader from "./KindlifeHeaderShader";
+const { variant = "home" } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const backing = variant === "events"
+  ? `${base}/images/event_calendar/event-calendar-site-header-logo-backing.svg`
+  : variant === "kindlife"
+    ? `${base}/images/kindlife_prototype/kindlife-site-header-logo-backing.svg`
+    : "";
+const logo = variant === "events"
+  ? `${base}/images/event_calendar/event-calendar-site-header-logo-image.png`
+  : variant === "kindlife"
+    ? `${base}/images/kindlife_prototype/kindlife-site-header-logo-image.png`
+    : `${base}/kind-design-logo.png`;
+---
+<header class:list={["site_header", `site_header_${variant}`]}>
+  {variant === "kindlife" && <div class="header_shader" aria-hidden="true"><KindlifeHeaderShader client:load /></div>}
+  <a class:list={["brand", `brand_${variant}`]} href={`${base}/`} aria-label="Kind Design home" style={backing ? `--brand-backing: url(\"${backing}\")` : undefined}>
+    {variant === "kindlife" ? (
+      <>
+        <img class="brand_backing_alt" src={`${base}/images/kindlife_prototype/kindlife-site-header-logo-backing2.svg`} alt="" />
+        <span class="brand_symbol_clip"><img class="brand_symbol" src={logo} alt="" /></span>
+        <img class="brand_logo" src={`${base}/images/kindlife_prototype/home-site-header-logo-image.png`} alt="Kind Design" />
+      </>
+    ) : <img src={logo} alt="Kind Design" width="152" height="93" />}
   </a>
-
   <nav class="navigation" aria-label="Main navigation">
-    <a class="navigation_hover_link" href={import.meta.env.BASE_URL + "/about"}>ABOUT</a>
-    <a class="navigation_hover_link" href={import.meta.env.BASE_URL + "/#events"}>EVENTS</a>
-    <a class="navigation_hover_link" href={import.meta.env.BASE_URL + "/talks"}>TALKS</a>
-    <a class="navigation_hover_link" href={import.meta.env.BASE_URL + "/kindlife"}>KINDLIFE</a>
+    <a class="navigation_hover_link" href={`${base}/about`}>ABOUT</a>
+    <a class="navigation_hover_link" href={`${base}/events`}>EVENTS</a>
+    <a class="navigation_hover_link" href={`${base}/about#talks`}>TALKS</a>
+    <a class="navigation_hover_link" href={`${base}/kindlife`}>KINDLIFE</a>
     <a class="navigation_hover_link" href="https://www.instagram.com/kinddesign.cph/" target="_blank" rel="noreferrer">INSTAGRAM</a>
   </nav>
 </header>
-
 <style>
- .site_header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  width: 100%;
-  height: 147px;
-  background: #f5f0e0c3;
-  backdrop-filter: blur(10px);
-}
-
-  .brand {
-    position: absolute;
-    z-index: 2;
-    top: 23px;
-    left: clamp(18px, 3vw, 51px);
-    display: block;
-    width: 163px;
-    height: 169px;
-    background: #2b0f13;
-    border-radius: 50%;
-  }
-
-  .brand img {
-    position: absolute;
-    top: 38px;
-    left: 5.5px;
-    display: block;
-    width: 152px;
-    height: 93px;
-    object-fit: contain;
-  }
-
-  .navigation {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: clamp(18px, 2.5vw, 42px);
-    height: 100%;
-    padding-right: clamp(24px, 6.3vw, 106px);
-    padding-left: 230px;
-  }
-
-  .navigation a {
-    color: #000;
-    font-family: 'Antonio', Impact, sans-serif;
-    font-size: 31px;
-    font-weight: 400;
-    line-height: 40px;
-    white-space: nowrap;
-    text-decoration: none;
-  }
-
-  @media (max-width: 900px) {
-    .navigation {
-      gap: 18px;
-      padding-right: 22px;
-      padding-left: 205px;
-    }
-
-    .navigation a {
-      font-size: 23px;
-    }
-  }
-
-  @media (max-width: 700px) {
-    .site_header {
-      height: 94px;
-    }
-
-    .brand {
-      top: 12px;
-      left: 14px;
-      width: 102px;
-      height: 105px;
-    }
-
-    .brand img {
-      top: 24px;
-      left: 3.5px;
-      width: 95px;
-      height: 58px;
-    }
-
-    .navigation {
-      flex-wrap: wrap;
-      align-content: center;
-      justify-content: flex-end;
-      gap: 3px 13px;
-      padding: 8px 14px 8px 125px;
-    }
-
-    .navigation a {
-      font-size: 17px;
-      line-height: 25px;
-    }
-  }
+.site_header{position:sticky;top:0;z-index:100;box-sizing:border-box;width:100%;height:147px;background:#f5f0e0c3;backdrop-filter:blur(10px)}
+.brand{position:absolute;z-index:2;top:23px;left:clamp(18px,3vw,51px);display:block;width:163px;height:169px;border-radius:50%;background:#2b0f13}
+.brand img{position:absolute;top:38px;left:5.5px;display:block;width:152px;height:93px;object-fit:contain}
+.navigation{position:relative;z-index:1;box-sizing:border-box;display:flex;justify-content:flex-end;align-items:center;gap:clamp(18px,2.5vw,42px);height:100%;padding-right:clamp(24px,6.3vw,106px);padding-left:230px}
+.navigation a{position:relative;color:#000;font-family:Antonio,Impact,sans-serif;font-size:31px;font-weight:400;line-height:40px;white-space:nowrap;text-decoration:none}
+.site_header_events{height:156px;background:#c9eaf7}
+.site_header_events .brand{top:24px;left:31px;width:163px;height:169px;background-image:var(--brand-backing);background-size:100% 100%;background-color:transparent}
+.site_header_kindlife{height:145px;background:linear-gradient(120deg,#f4f090 0%,#dceeeB 45%,#f5f0e0 75%,#2b0f13 100%)}
+.site_header_kindlife .brand{top:24px;left:31px;width:167.145px;height:173.546px;background-image:var(--brand-backing);background-size:100% 100%;background-color:transparent}
+.site_header_kindlife .brand_backing_alt{inset:0;width:100%;height:100%;object-fit:fill}
+.site_header_kindlife .brand_symbol_clip{position:absolute;top:30.16px;left:33.66px;width:98.689px;height:103.623px;overflow:hidden}.site_header_kindlife .brand_symbol{top:-22.86%;left:-24.15%;width:145.3%;height:137.3%;object-fit:fill}
+.site_header_kindlife .brand_logo{top:37.54px;left:6.02px;width:153.401px;height:95.309px;object-fit:contain}
+.site_header_events .navigation,.site_header_kindlife .navigation{position:absolute;inset:0;display:block;height:100%;padding:0}
+.site_header_events .navigation a,.site_header_kindlife .navigation a{position:absolute;top:49px;font-size:31.23px;line-height:normal}
+.site_header_events .navigation a:nth-child(1),.site_header_kindlife .navigation a:nth-child(1){left:909px}
+.site_header_events .navigation a:nth-child(2),.site_header_kindlife .navigation a:nth-child(2){left:1025px}
+.site_header_events .navigation a:nth-child(3),.site_header_kindlife .navigation a:nth-child(3){left:1155.5px}
+.site_header_events .navigation a:nth-child(4),.site_header_kindlife .navigation a:nth-child(4){left:1263px}
+.site_header_events .navigation a:nth-child(5),.site_header_kindlife .navigation a:nth-child(5){left:1415px}
+.header_shader{position:absolute;inset:0;z-index:0;overflow:hidden;opacity:.9;pointer-events:none}
+:global(.kindlife_header_shader_canvas){display:block;width:100%;height:100%}
+@media(max-width:900px){.navigation{gap:18px;padding-right:22px;padding-left:205px}.navigation a{font-size:23px}}
+@media(max-width:700px){.site_header,.site_header_events,.site_header_kindlife{height:94px}.brand,.site_header_events .brand,.site_header_kindlife .brand{top:12px;left:14px;width:102px;height:105px}.brand>img{top:24px;left:3.5px;width:95px;height:58px}.site_header_kindlife .brand_backing_alt{inset:0;width:100%;height:100%}.site_header_kindlife .brand_symbol_clip{top:18px;left:20px;width:62px;height:66px}.site_header_kindlife .brand_symbol{top:-22.86%;left:-24.15%;width:145.3%;height:137.3%}.site_header_kindlife .brand_logo{top:23px;left:3px;width:96px;height:60px}.navigation,.site_header_events .navigation,.site_header_kindlife .navigation{position:relative;inset:auto;display:flex;flex-wrap:wrap;align-content:center;justify-content:flex-end;gap:3px 13px;height:100%;padding:8px 14px 8px 125px}.navigation a,.site_header_events .navigation a,.site_header_kindlife .navigation a{position:relative;top:auto;left:auto;font-size:17px;line-height:25px}}
 </style>

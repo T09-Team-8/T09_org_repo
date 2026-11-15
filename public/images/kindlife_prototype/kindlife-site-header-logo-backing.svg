@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="162.54" height="169.12" viewBox="0 0 162.54 169.12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="kindlife-site-header__logo-backing">
+<g id="kindlife-site-header__logo-backing_2">
+<ellipse cx="81.27" cy="84.56" rx="81.27" ry="84.56" fill="#2B0F13"/>
+<mask id="stroke0_0_112" fill="white">
+<path d="M162.54 84.56C162.54 131.261 126.154 169.12 81.27 169.12C36.3858 169.12 0 131.261 0 84.56C0 37.8588 36.3858 0 81.27 0C126.154 0 162.54 37.8588 162.54 84.56Z"/>
+</mask>
+<ellipse cx="81.27" cy="84.56" rx="81.27" ry="84.56" stroke-width="8" stroke="#50001A" mask="url(#stroke0_0_112)"/>
+</g>
+</g>
+</svg>

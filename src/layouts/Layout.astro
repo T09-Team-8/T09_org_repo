@@ -1,65 +1,27 @@
 ---
 import Header from '../components/Header.astro';
 import Hover from '../components/Hover.astro';
-
-const { headerVariant = 'home' } = Astro.props;
+const { headerVariant = 'home', title = 'Kind Design' } = Astro.props;
 ---
-
 <!doctype html>
 <html lang="en">
-	 <head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kind Design</title>
-
+    <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Antonio:wght@400&family=Inter:wght@400;600;700&family=Merriweather:wght@700&family=Questrial&family=Roboto:wght@400&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400&family=Inter:wght@400;600;700&family=Merriweather:wght@700&family=Questrial&family=Roboto:wght@400&display=swap" rel="stylesheet" />
   </head>
-	 <body data-header-variant={headerVariant}>
-    <Header />
+  <body data-header-variant={headerVariant}>
+    <Header variant={headerVariant} />
     <Hover />
     <slot />
-	<!-- this slot is is where Astro inserts this page's content for each page that uses this layout -->
   </body>
 </html>
-
 <style is:global>
-  :root {
-    --site-header-height: 147px;
-  }
-
-  html, body {
-    margin: 0;
-    min-height: 100%;
-    background: #f5f0e0;
-  }
-
-  @media (min-width: 701px) {
-    body[data-header-variant="about"] {
-      --site-header-height: 138px;
-    }
-
-    body[data-header-variant="about"] .site_header {
-      height: 138px;
-    }
-
-    body[data-header-variant="about"] .site_header .brand {
-      left: 41px;
-    }
-  }
-
-  @media (max-width: 700px) {
-    :root {
-      --site-header-height: 94px;
-    }
-
-    body[data-header-variant="about"] {
-      --site-header-height: 94px;
-    }
-  }
+:root{--site-header-height:147px}
+html,body{margin:0;min-height:100%;background:#f5f0e0}
+@media(min-width:701px){body[data-header-variant="about"]{--site-header-height:138px}body[data-header-variant="about"] .site_header{height:138px}body[data-header-variant="about"] .site_header .brand{left:41px}body[data-header-variant="events"]{--site-header-height:156px}body[data-header-variant="kindlife"]{--site-header-height:145px}}
+@media(max-width:700px){:root{--site-header-height:94px}body[data-header-variant="about"],body[data-header-variant="events"],body[data-header-variant="kindlife"]{--site-header-height:94px}}
 </style>
-
