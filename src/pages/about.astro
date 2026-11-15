@@ -57,7 +57,7 @@ import Button from '../components/Buttons.astro';
         <p class="events_and_about_description">KindDesign promotes events and communicates with members primarily through Instagram and LinkedIn.</p>
         <ul class="events_and_about_links">
           <li><Button href="https://www.instagram.com/kinddesign.cph/" target="_blank" variant="event_row">SIGN UP <span class="button_arrow" aria-hidden="true">↗</span></Button></li>
-          <li><Button href={import.meta.env.BASE_URL + "/#talks"} variant="event_row">TALKS <span class="button_arrow" aria-hidden="true">↗</span></Button></li>
+          <li id="talks"><Button href={import.meta.env.BASE_URL + "/about#talks"} variant="event_row">TALKS <span class="button_arrow" aria-hidden="true">↗</span></Button></li>
           <li><Button href="https://www.instagram.com/kinddesign.cph/" target="_blank" variant="event_row">KINDLIFE <span class="button_arrow" aria-hidden="true">↗</span></Button></li>
         </ul>
         <Button href="https://www.instagram.com/kinddesign.cph/" target="_blank" variant="follow_events">FOLLOW EVENTS ON INSTAGRAM</Button>

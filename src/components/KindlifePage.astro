@@ -1,0 +1,113 @@
+---
+const asset=(name)=>import.meta.env.BASE_URL.replace(/\/$/, "")+"/images/kindlife_prototype/"+name;
+---
+<main class="kindlife_page">
+  <section class="kindlife_hero" aria-labelledby="kindlife_title">
+    <h1 id="kindlife_title">Kind <br />Life</h1>
+    <p>EXPLORE MOMENTS, PEOPLE AND VIBES</p>
+  </section>
+  <section class="kindlife_gallery kindlife_moments" aria-labelledby="moments_title">
+    <h2 id="moments_title">MOMENTS THAT CONNECT</h2><span class="kindlife_location kindlife_location_cph">CPH</span>
+    <div class="kindlife_gallery_images">
+      <figure><img class="kindlife_moment_image01" src={asset("kindlife-moments-gallery-image01.png")} alt="KindLife moment" loading="lazy" /></figure>
+      <figure><img class="kindlife_moment_image02" src={asset("kindlife-moments-gallery-image02.png")} alt="KindLife gathering" loading="lazy" /></figure>
+      <figure><img class="kindlife_moment_image03" src={asset("kindlife-moments-gallery-image03.png")} alt="KindLife community moment" loading="lazy" /></figure>
+    </div>
+    <img class="kindlife_arrow" src={asset("kindlife-moments-gallery-arrow-icon.svg")} alt="" />
+  </section>
+  <section class="kindlife_gallery kindlife_good_company" aria-labelledby="good_company_title">
+    <h2 id="good_company_title">GOOD COMPANY</h2><span class="kindlife_location kindlife_location_ba">BA</span>
+    <div class="kindlife_gallery_images">
+      <figure><img class="kindlife_company_image01" src={asset("kindlife-good-company-gallery-image01.png")} alt="Good company at KindLife" loading="lazy" /></figure>
+      <figure><img class="kindlife_company_image02" src={asset("kindlife-good-company-gallery-image02.png")} alt="KindLife community together" loading="lazy" /></figure>
+      <figure><img class="kindlife_company_image03" src={asset("kindlife-good-company-gallery-image03.png")} alt="A moment with the KindLife community" loading="lazy" /></figure>
+    </div>
+    <img class="kindlife_arrow" src={asset("kindlife-good-company-gallery-arrow-icon.svg")} alt="" />
+  </section>
+  <section class="kindlife_gallery kindlife_after_hours" aria-labelledby="after_hours_title">
+    <h2 id="after_hours_title">AFTER HOURS</h2><span class="kindlife_location kindlife_location_ber">BER</span>
+    <div class="kindlife_gallery_images">
+      <figure><img class="kindlife_after_image01" src={asset("kindlife-after-hours-gallery-image01.png")} alt="KindLife after hours" loading="lazy" /></figure>
+      <figure><img class="kindlife_after_image02" src={asset("kindlife-after-hours-gallery-image02.png")} alt="People spending time together after an event" loading="lazy" /></figure>
+      <figure><img class="kindlife_after_image03" src={asset("kindlife-after-hours-gallery-image03.png")} alt="KindLife evening gathering" loading="lazy" /></figure>
+    </div>
+  </section>
+  <section class="kindlife_upcoming" aria-label="Upcoming events">
+    <img class="kindlife_be_kind" src={asset("kindlife-upcoming-events-be-kind-artwork.png")} alt="Be Kind" loading="lazy" />
+    <img class="kindlife_upcoming_image" src={asset("kindlife-upcoming-events-image02.png")} alt="KindLife upcoming event" loading="lazy" />
+    <a href={import.meta.env.BASE_URL+"/events"}>FOR UPCOMING<br />EVENTS ↗</a>
+  </section>
+  <footer class="kindlife_footer">
+    <div class="kindlife_footer_brand"><p class="kindlife_footer_brand_name">Kind Design</p><p class="kindlife_footer_brand_tagline">COMMUNITY / EVENTS / COLLABORATIONS</p></div>
+    <div class="kindlife_footer_connect"><h2>LETS CONNECT</h2><p>Meet like-minded<br />creatives.</p></div>
+    <div class="kindlife_footer_inspire"><h2>INSPIRE</h2><p>Exchange ideas and new<br />perspectives.</p></div>
+    <div class="kindlife_footer_find"><img class="kindlife_footer_contact_background" src={asset("kindlife-site-footer-contact-background.svg")} alt="" /><div class="kindlife_footer_contact_copy"><h2>FIND US</h2><p>Share, learn and build together.</p><a href="https://www.instagram.com/kinddesign.cph/" target="_blank" rel="noreferrer">INSTAGRAM ↗</a><a href="https://www.linkedin.com/company/kinddesign-cph/" target="_blank" rel="noreferrer">LINKEDIN ↗</a><a href="mailto:kinddesign.cph@gmail.com">KINDDESIGN.CPH@GMAIL.COM</a></div></div>
+  </footer>
+</main>
+<style>
+.kindlife_page{width:100%;max-width:1681px;margin:0 auto;overflow:hidden;background:#f5f0e0;color:#2b0f13;font-family:Inter,Arial,sans-serif}
+.kindlife_hero{position:relative;height:914px;overflow:hidden;background:#f5f0e0}
+.kindlife_hero:before{position:absolute;top:-5px;left:0;width:100%;height:571px;content:"";background:#f4f090}
+.kindlife_hero h1{position:absolute;top:153px;left:84px;margin:0;color:rgb(43 15 19 / 66%);font:700 128px/128px Antonio,Impact,sans-serif;letter-spacing:0}
+.kindlife_hero p{position:absolute;top:629px;left:94px;width:569px;margin:0;font:600 32px/1 Inter,sans-serif}
+.kindlife_gallery{position:relative;height:774px;overflow:hidden;background:#f5f0e0}
+.kindlife_gallery:before{position:absolute;top:54px;left:0;width:calc(100% + 3px);height:615px;content:"";background:rgb(0 0 0 / 90%)}
+.kindlife_gallery h2{position:absolute;z-index:2;top:0;left:1106px;width:750px;margin:0;font:600 32px/1.2 Inter,sans-serif;letter-spacing:0}
+.kindlife_gallery_images{position:absolute;z-index:1;top:107px;left:0;width:100%;height:510px}
+.kindlife_gallery_images figure{position:absolute;top:0;width:433px;height:510px;overflow:hidden;margin:0;background:#d5d0c5}
+.kindlife_gallery_images figure:nth-child(1){left:141px}.kindlife_gallery_images figure:nth-child(2){left:630.5px}.kindlife_gallery_images figure:nth-child(3){left:1142px}
+.kindlife_gallery_images img{position:absolute;display:block;max-width:none;opacity:.9}
+.kindlife_location{position:absolute;z-index:2;font:600 32px/1.2 Roboto,Arial,sans-serif}
+.kindlife_location_cph{top:587px;left:23px;color:#f6efd7}
+.kindlife_location_ba{top:603px;left:1604px;color:#2b0f13}
+.kindlife_location_ber{top:600px;left:38px;color:#f6efd7}
+.kindlife_arrow{position:absolute;z-index:2;top:363px;left:1595px;width:62px;height:30px;object-fit:contain}
+.kindlife_moments:before{background:rgb(0 0 0 / 90%)}
+.kindlife_moments h2{left:1106px;right:auto}
+.kindlife_moments .kindlife_gallery_images{top:107px}
+.kindlife_moments .kindlife_gallery_images figure:nth-child(1){left:630.5px}
+.kindlife_moments .kindlife_gallery_images figure:nth-child(2){left:141px}
+.kindlife_moments .kindlife_gallery_images figure:nth-child(3){left:1142px}
+.kindlife_moments .kindlife_arrow{top:362px;left:1595px}
+.kindlife_moment_image01{top:-22.12%;left:0;width:99.99%;height:127.97%}
+.kindlife_moment_image02{top:-.23%;left:0;width:177.42%;height:100.47%}
+.kindlife_moment_image03{top:-28.04%;left:-.21%;width:100.42%;height:128.04%}
+.kindlife_good_company{height:813px}
+.kindlife_good_company:before{top:70px;background:rgb(202 234 248 / 90%)}
+.kindlife_good_company h2{left:23px;right:auto}
+.kindlife_good_company .kindlife_gallery_images{top:123px}
+.kindlife_good_company .kindlife_gallery_images figure:nth-child(1){left:1142px}
+.kindlife_good_company .kindlife_gallery_images figure:nth-child(2){left:652.5px}
+.kindlife_good_company .kindlife_gallery_images figure:nth-child(3){left:163px}
+.kindlife_good_company .kindlife_arrow{top:378px;left:51px}
+.kindlife_company_image01{top:0;left:-19.86%;width:209.47%;height:100.04%}
+.kindlife_company_image02{top:0;left:-.08%;width:212.45%;height:100.12%}
+.kindlife_company_image03{top:0;left:-102.46%;width:202.43%;height:99.94%}
+.kindlife_after_hours{height:842px}
+.kindlife_after_hours:before{top:70px;left:-22px;width:calc(100% + 25px);background:#5e4744}
+.kindlife_after_hours h2{left:1294px;right:auto;color:#2b0f13}
+.kindlife_after_hours .kindlife_gallery_images{top:123px}
+.kindlife_after_hours .kindlife_gallery_images figure:nth-child(1){left:150px}
+.kindlife_after_hours .kindlife_gallery_images figure:nth-child(2){left:1129px}
+.kindlife_after_hours .kindlife_gallery_images figure:nth-child(3){left:639.5px}
+.kindlife_after_hours .kindlife_arrow{top:378px;left:1588px}
+.kindlife_after_image01{top:-27.01%;left:-.06%;width:100.12%;height:127.01%}
+.kindlife_after_image02{top:-15.29%;left:-.1%;width:100.2%;height:131.18%}
+.kindlife_after_image03{top:0;left:-.1%;width:100.2%;height:143.38%}
+.kindlife_upcoming_link{position:absolute;top:317px;left:1006px;z-index:3;width:225px;color:#2b0f13;font:600 24px/1.2 Inter,sans-serif;text-decoration:none}
+.kindlife_upcoming_link:hover,.kindlife_upcoming_link:focus-visible{text-decoration:underline;text-underline-offset:4px}
+.kindlife_upcoming{position:relative;height:455px;overflow:hidden;background:#f5f0e0}
+.kindlife_be_kind{position:absolute;top:9px;left:178px;width:723px;height:362px;object-fit:contain}
+.kindlife_upcoming_image{position:absolute;top:0;left:1249px;box-sizing:border-box;width:364px;height:379px;border:3px solid rgb(0 0 0 / 80%);border-radius:2px;box-shadow:0 4px 5px rgb(0 0 0 / 50%);object-fit:cover;opacity:.6}
+.kindlife_upcoming>a{position:absolute;top:317px;left:1006px;z-index:1;width:225px;color:#2b0f13;font:600 24px/1.2 Inter,sans-serif;text-decoration:none}
+.kindlife_upcoming>a:hover,.kindlife_upcoming>a:focus-visible{text-decoration:underline;text-underline-offset:4px}
+.kindlife_footer{position:relative;height:379px;overflow:hidden;background:#f5f0e0}
+.kindlife_footer_brand{position:absolute;top:0;left:-45px;width:446px;height:147px;box-sizing:border-box;padding:22px 30px;background:#f5f0e0}
+.kindlife_footer_brand img{width:153px;height:95px;object-fit:contain;object-position:left center}
+.kindlife_footer_brand p{margin:0;font:400 9px/1.2 Inter,sans-serif}
+.kindlife_footer_connect{position:absolute;top:0;left:398.02px;box-sizing:border-box;width:814.287px;height:378.25px;padding:46.5px 0 0 50.29px;background:rgb(197 233 251 / 90%);color:#2b0f13}
+.kindlife_footer_inspire{position:absolute;top:46.5px;left:755.26px;box-sizing:border-box;width:205px;height:81px;padding:0;background:transparent;color:#2b0f13}
+.kindlife_footer_find{position:absolute;top:.75px;left:1212.31px;box-sizing:border-box;width:468.309px;height:378.25px;padding:45px 30.77px;background:#f5f0e0;color:#f5f0e0}.kindlife_footer_contact_background{position:absolute;inset:0;width:100%;height:100%}.kindlife_footer_contact_copy{position:relative;z-index:1}
+.kindlife_footer h2{margin:0;font:700 27px/1.12 Inter,sans-serif}.kindlife_footer p{margin:0;font:400 18px/1.67 Inter,sans-serif}.kindlife_footer_find p{margin-bottom:25px}.kindlife_footer_find a{display:block;margin-top:25px;color:#f5f0e0;font:600 11px/1.2 Inter,sans-serif;text-decoration:none}.kindlife_footer_find a:hover,.kindlife_footer_find a:focus-visible{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.kindlife_hero{height:914px;max-height:calc(100svh - var(--site-header-height));min-height:580px}.kindlife_hero h1{top:20%;left:5%;font-size:clamp(76px,18vw,128px);line-height:1}.kindlife_hero p{top:auto;bottom:12%;left:5%;width:80%;font-size:clamp(20px,5vw,32px)}.kindlife_gallery,.kindlife_good_company,.kindlife_after_hours{height:auto;min-height:700px;padding:70px 5% 65px;box-sizing:border-box}.kindlife_gallery:before,.kindlife_good_company:before,.kindlife_after_hours:before{top:40px;left:0;width:100%;height:calc(100% - 80px)}.kindlife_gallery h2,.kindlife_good_company h2,.kindlife_after_hours h2{top:14px;right:auto;left:5%;width:90%;font-size:clamp(24px,6vw,32px)}.kindlife_gallery_images,.kindlife_good_company .kindlife_gallery_images,.kindlife_after_hours .kindlife_gallery_images{position:relative;top:auto;left:auto;width:100%;height:auto;margin-top:65px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.kindlife_gallery_images figure,.kindlife_gallery_images figure:nth-child(n){position:relative;inset:auto;width:100%;height:auto;aspect-ratio:4/5}.kindlife_gallery_images figure:last-child{display:none}.kindlife_gallery_images img{inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important}.kindlife_location{top:auto;right:auto;bottom:22px;left:5%;font-size:20px}.kindlife_location_ba{right:5%;left:auto}.kindlife_arrow{top:auto!important;right:5%;bottom:15px;left:auto!important}.kindlife_upcoming_link{top:auto;right:5%;bottom:20px;left:auto;width:50%;font-size:16px}.kindlife_upcoming{height:360px}.kindlife_be_kind{left:5%;width:58%;height:260px}.kindlife_upcoming_image{right:4%;left:auto;width:30%;height:280px}.kindlife_upcoming>a{top:auto;right:35%;bottom:25px;left:auto;font-size:18px}.kindlife_footer{height:auto;display:grid;grid-template-columns:1fr 1fr}.kindlife_footer_brand,.kindlife_footer_connect,.kindlife_footer_inspire,.kindlife_footer_find{position:relative;inset:auto;width:auto;height:210px;padding:35px 22px}.kindlife_footer_brand{grid-column:1/-1;height:150px}.kindlife_footer_inspire{padding-left:22px}}
+</style>

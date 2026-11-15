@@ -1,0 +1,57 @@
+---
+const asset=(name)=>import.meta.env.BASE_URL.replace(/\/$/, "")+"/images/event_calendar/"+name;
+---
+<main class="event_calendar_page">
+<section class="event_calendar_hero" aria-labelledby="event_calendar_heading"><h1 id="event_calendar_heading">Event<br />Calendar</h1></section>
+<section class="event_calendar_month event_calendar_august" aria-labelledby="event_calendar_august">
+<h2 id="event_calendar_august">AUGUST</h2>
+<div class="event_calendar_grid event_calendar_grid_august" role="group" aria-label="August event images">
+<figure class="event_calendar_tile event_calendar_august_01"><img src={asset("event-calendar-august-events-shivalini-image.png")} alt="Shivalini Kumar at a KindDesign event" loading="lazy" /></figure>
+<figure class="event_calendar_tile event_calendar_august_02"><img src={asset("event-calendar-august-events-image05.png")} alt="A creative event in a Copenhagen interior" loading="lazy" /></figure>
+<figure class="event_calendar_tile event_calendar_august_03"><img src={asset("event-calendar-august-events-image02.png")} alt="KindDesign event information on a phone" loading="lazy" /></figure>
+<figure class="event_calendar_tile event_calendar_august_04"><img src={asset("event-calendar-july-events-image01.png")} alt="Caroline Vang event poster" loading="lazy" /></figure>
+<figure class="event_calendar_tile event_calendar_august_05"><img src={asset("event-calendar-august-events-image04.png")} alt="Creative event poster" loading="lazy" /></figure>
+<figure class="event_calendar_tile event_calendar_august_06"><img src={asset("event-calendar-august-events-image01.png")} alt="KindDesign event attendees" loading="lazy" /></figure>
+</div><div class="event_calendar_scrollbar" aria-hidden="true"><span></span></div></section>
+<section class="event_calendar_month event_calendar_july" aria-labelledby="event_calendar_july">
+<h2 id="event_calendar_july">JULY</h2>
+<div class="event_calendar_grid event_calendar_grid_july" role="group" aria-label="July event images">
+<figure class="event_calendar_tile event_calendar_july_01"><img src={asset("event-calendar-july-events-image01.png")} alt="Caroline Vang event poster" loading="lazy" /></figure>
+<figure class="event_calendar_tile event_calendar_july_02"><img src={asset("event-calendar-july-events-image02.png")} alt="KindDesign event gathering" loading="lazy" /></figure>
+<figure class="event_calendar_tile event_calendar_july_03"><img src={asset("event-calendar-july-events-image03.png")} alt="Creative event poster" loading="lazy" /></figure>
+<figure class="event_calendar_tile event_calendar_july_04"><img src={asset("event-calendar-july-events-image04.png")} alt="Creative workshop poster" loading="lazy" /></figure>
+<figure class="event_calendar_tile event_calendar_july_05"><img src={asset("event-calendar-july-events-image05.png")} alt="KindDesign meetup poster" loading="lazy" /></figure>
+<figure class="event_calendar_tile event_calendar_july_06"><img src={asset("event-calendar-july-events-image06.png")} alt="KindDesign meetup event" loading="lazy" /></figure></div></section>
+<section class="event_calendar_more" aria-label="More events to come"><p>More To Come</p><img src={asset("event-calendar-more-to-come-logo-image.png")} alt="" loading="lazy" /></section>
+<footer class="event_calendar_footer"><div class="event_calendar_footer_top">
+<div class="event_calendar_footer_brand"><a href={import.meta.env.BASE_URL} aria-label="Kind Design home">Kind Design</a><p>COMMUNITY / EVENTS / COLLABORATIONS</p></div>
+<div class="event_calendar_footer_contact"><img class="event_calendar_footer_texture" src={asset("event-calendar-site-footer-contact-background.svg")} alt="" />
+<div class="event_calendar_footer_contact_copy"><h2>FIND US</h2><p>Share, learn and build together.</p><a href="https://www.instagram.com/kinddesign.cph/" target="_blank" rel="noreferrer">INSTAGRAM ↗</a><a href="https://www.linkedin.com/company/kinddesign-cph/" target="_blank" rel="noreferrer">LINKEDIN ↗</a></div></div>
+</div></footer>
+</main>
+<style>
+.event_calendar_page{width:100%;max-width:1681.225px;margin:0 auto;overflow:hidden;background:#f5f0e0;color:#2b0f13;font-family:Inter,Arial,sans-serif}
+.event_calendar_hero{position:relative;height:491px;background:#f5f0e0}.event_calendar_hero h1{position:absolute;top:108px;left:6.66%;margin:0;color:rgb(43 15 19 / 66%);font:700 128px/1.2 Antonio,Impact,sans-serif}
+.event_calendar_month{position:relative;width:100%;overflow:hidden}.event_calendar_august{height:1250px}.event_calendar_july{height:1195px}.event_calendar_month h2{position:absolute;z-index:2;top:47px;left:6.84%;margin:0;color:#2b0f13;font:700 20px/1.2 Inter,sans-serif}
+.event_calendar_grid{position:absolute;left:6.84%;width:86.32%;aspect-ratio:1451/1007;overflow:hidden}.event_calendar_grid_august{top:76px}.event_calendar_grid_july{top:29px}
+.event_calendar_tile{position:absolute;overflow:hidden;margin:0;background:#dedbd0}.event_calendar_tile img{position:absolute;display:block;max-width:none}
+.event_calendar_august_01{top:0;left:0;width:28.9456%;height:46.8729%}.event_calendar_august_01 img{top:-.1%;left:0;width:100.01%;height:99.99%}
+.event_calendar_august_02{top:0;left:30.5996%;width:38.0427%;height:46.8729%}.event_calendar_august_02 img{top:-27.33%;left:-58.19%;width:216.3%;height:164.87%}
+.event_calendar_august_03{top:0;left:70.641%;width:29.358%;height:49.4538%}.event_calendar_august_03 img{top:-5.44%;left:-22.07%;width:177.46%;height:101.24%}
+.event_calendar_august_04{top:49.255%;left:0;width:28.9456%;height:50.7458%}.event_calendar_august_04 img{top:.02%;left:-.12%;width:100.04%;height:101.92%}
+.event_calendar_august_05{top:49.4538%;left:30.5996%;width:38.0427%;height:50.5462%}.event_calendar_august_05 img{top:-29.3%;left:0;width:140.01%;height:141.53%}
+.event_calendar_august_06{top:49.4538%;left:70.641%;width:29.358%;height:50.5462%}.event_calendar_august_06 img{top:-12.38%;left:-.11%;width:101.92%;height:113.75%}
+.event_calendar_july_01{top:-.397%;left:70.434%;width:32.46%;height:50.447%}.event_calendar_july_01 img{top:.02%;left:-.12%;width:100.04%;height:114.96%}
+.event_calendar_july_02{top:-.397%;left:30.6685%;width:38.18%;height:37.934%}.event_calendar_july_02 img{inset:0;width:100%;height:100%;object-fit:cover}
+.event_calendar_july_03{top:52.631%;left:0;width:29.083%;height:51.142%}.event_calendar_july_03 img{top:-2.24%;left:-2.53%;width:147.09%;height:131.34%}
+.event_calendar_july_04{top:0;left:-7.374%;width:36.458%;height:50.05%}.event_calendar_july_04 img{top:-23.97%;left:0;width:140.01%;height:178.99%}
+.event_calendar_july_05{top:52.631%;left:70.434%;width:29.565%;height:47.368%}.event_calendar_july_05 img{top:-55.02%;left:-27.46%;width:129%;height:156.57%}
+.event_calendar_july_06{top:39.523%;left:30.6685%;width:38.18%;height:60.477%}.event_calendar_july_06 img{top:-12.94%;left:.02%;width:100.01%;height:112.98%}
+.event_calendar_scrollbar{position:absolute;z-index:3;top:76px;right:3.1%;width:12px;height:1663px;background:#e4ddcf}.event_calendar_scrollbar span{display:block;width:100%;height:300px;background:#6b5553}
+.event_calendar_more{position:relative;height:646px;overflow:hidden;background:#f4f07a}.event_calendar_more p{position:absolute;right:6.4%;bottom:8.5%;z-index:1;margin:0;color:transparent;font:700 32px/1 Merriweather,Georgia,serif;-webkit-text-stroke:1px #f5f0e0}.event_calendar_more img{position:absolute;right:3.6%;bottom:7.3%;width:54px;height:40px;object-fit:contain}
+.event_calendar_footer{height:585px;overflow:hidden;background:#f5f0e0}.event_calendar_footer_top{position:relative;height:373px}
+.event_calendar_footer_brand{position:absolute;inset:0 auto auto 0;box-sizing:border-box;width:64.72%;height:100%;padding:38px 34px;color:#fff;background:#191919}.event_calendar_footer_brand a{display:inline-block;color:#fff;font:400 24px/1.2 Questrial,sans-serif;text-decoration:none}.event_calendar_footer_brand p{margin:2px 0 0;font:400 9px/1.2 Inter,sans-serif}
+.event_calendar_footer_contact{position:absolute;inset:0 0 auto auto;box-sizing:border-box;width:37.12%;height:100%;overflow:hidden;padding:54px 40px;color:#fff;background:#604b4b}.event_calendar_footer_texture{position:absolute;inset:0;width:100%;height:100%}.event_calendar_footer_contact_copy{position:relative;z-index:1}
+.event_calendar_footer_contact h2{margin:0;font:700 24px/1.2 Inter,sans-serif}.event_calendar_footer_contact p{margin:3px 0 28px;font:400 16px/1.2 Inter,sans-serif}.event_calendar_footer_contact a{display:block;margin:0 0 18px 4px;color:#fff;font:600 10px/1.2 Inter,sans-serif;text-decoration:none}.event_calendar_footer_contact a:hover,.event_calendar_footer_contact a:focus-visible{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.event_calendar_hero{height:360px}.event_calendar_hero h1{top:105px;left:7%;font-size:clamp(64px,12vw,100px)}.event_calendar_august,.event_calendar_july{height:auto;padding:76px 5% 52px;box-sizing:border-box}.event_calendar_month h2{top:28px;left:5%;font-size:18px}.event_calendar_grid{position:relative;top:auto;left:auto;display:grid;width:100%;aspect-ratio:auto;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;overflow:visible}.event_calendar_tile{position:relative;inset:auto;width:auto;height:auto;aspect-ratio:4/5}.event_calendar_tile img{inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important}.event_calendar_scrollbar{display:none}.event_calendar_more{height:350px}.event_calendar_footer{height:auto}.event_calendar_footer_top{height:auto;display:grid;grid-template-columns:1fr}.event_calendar_footer_brand,.event_calendar_footer_contact{position:relative;inset:auto;width:100%;min-height:220px}}
+</style>
