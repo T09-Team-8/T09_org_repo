@@ -1,0 +1,23 @@
+---
+import Button from './Buttons.astro';
+---
+
+<section class="events_and_about" aria-label="About KindDesign and upcoming events">
+      <div class="events_and_about_content">
+        <p class="events_and_about_eyebrow">KINDDESIGN CPH</p>
+        <h2>Upcoming<br />events</h2>
+        <p class="events_and_about_description">KindDesign promotes events and communicates with members primarily through Instagram and LinkedIn.</p>
+        <ul class="events_and_about_links">
+          <li><Button href="https://www.instagram.com/kinddesign.cph/" target="_blank" variant="event_row">SIGN UP <span class="button_arrow" aria-hidden="true">↗</span></Button></li>
+          <li><Button href="https://www.instagram.com/kinddesign.cph/" target="_blank" variant="event_row">TALKS <span class="button_arrow" aria-hidden="true">↗</span></Button></li>
+          <li><Button href="https://www.instagram.com/kinddesign.cph/" target="_blank" variant="event_row">KINDLIFE <span class="button_arrow" aria-hidden="true">↗</span></Button></li>
+        </ul>
+        <Button href="https://www.instagram.com/kinddesign.cph/" target="_blank" variant="follow_events">FOLLOW EVENTS ON INSTAGRAM</Button>
+      </div>
+      <div class="events_and_about_visual" aria-hidden="true">
+        <img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/about/events-flower.png"} alt="" />
+        <span>KindDesign</span>
+      </div>
+      <div class="events_and_about_light" aria-hidden="true"></div>
+    </section>
+

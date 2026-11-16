@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Pcard from '../components/Pcard.astro';
+
+const products = [];
+---
+
+<Layout>
+  <main class="products_page">
+    <section class="products_section" aria-labelledby="products_heading">
+      <h1 id="products_heading">Products</h1>
+      <div class="products_grid">
+        {products.map((product) => <Pcard product={product} />)}
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .products_page {
+    min-height: calc(100vh - var(--site-header-height));
+    padding: 64px 5%;
+    box-sizing: border-box;
+    background: #f5f0e0;
+    color: #2b0f13;
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  .products_section {
+    width: min(100%, 1440px);
+    margin: 0 auto;
+  }
+
+  .products_section h1 {
+    margin: 0 0 32px;
+    font-family: Antonio, Arial, sans-serif;
+    font-size: clamp(36px, 5vw, 72px);
+    font-weight: 400;
+  }
+
+  .products_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+</style>
