@@ -2,10 +2,10 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 
-// https://astro.build/config
-export default defineConfig({
-	site: 'https://t09-team-8.github.io',
-	base: process.env.ASTRO_BASE ?? '/',
-	integrations: [react()],
-});
+const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
 
+export default defineConfig({
+  site: isGitHubPages ? 'https://t09-team-8.github.io' : undefined,
+  base: isGitHubPages ? '/T09_org_repo' : '/',
+  integrations: [react()],
+});
