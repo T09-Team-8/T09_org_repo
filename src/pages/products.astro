@@ -2,16 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Pcard from '../components/Pcard.astro';
 
-const endpoint = import.meta.env.SUPABASE_URL + '/rest/v1/products?select=*';
-const apiKey = import.meta.env.SUPABASE_ANON_KEY;
-
-const response = await fetch(endpoint, {
-  headers: {
-    apikey: apiKey,
-  },
-});
-
-const products = await response.json();
+const products = [];
 ---
 
 <Layout>

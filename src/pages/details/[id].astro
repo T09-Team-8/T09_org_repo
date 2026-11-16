@@ -1,17 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-export async function getStaticPaths() {
-  const endpoint = import.meta.env.SUPABASE_URL + '/rest/v1/products?select=*';
-  const apiKey = import.meta.env.SUPABASE_ANON_KEY;
-
-  const response = await fetch(endpoint, {
-    headers: {
-      apikey: apiKey,
-    },
-  });
-
-  const products = await response.json();
+export function getStaticPaths() {
+  const products = [];
 
   return products.map((product) => {
     return {

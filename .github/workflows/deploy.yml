@@ -24,8 +24,6 @@ jobs:
         uses: withastro/action@v6
         env:
           ASTRO_BASE: /T09_org_repo
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
 
   deploy:
     needs: build
