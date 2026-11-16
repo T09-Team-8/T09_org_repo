@@ -31,8 +31,33 @@
     transition: opacity 200ms ease-out;
   }
 
-  :is(.community_photo, .community_photo_meetup, .community_photo_members, .community_photo_space, .community_photo_gathering, .events_photo, .events_photo_portrait, .events_photo_feature, .events_photo_calendar):hover::after {
+  :is(.community_photo, .community_photo_meetup, .community_photo_members, .community_photo_space, .community_photo_gathering, .events_photo, .events_photo_portrait, .events_photo_feature, .events_photo_calendar):hover::after,
+  :is(.community_photo_meetup, .community_photo_members, .community_photo_space, .community_photo_gathering, .events_photo, .events_photo_portrait, .events_photo_feature):focus-within::after {
     opacity: 1;
+  }
+
+  .image_hover_caption {
+    position: absolute;
+    z-index: 3;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px;
+    color: #fff;
+    font: 600 clamp(14px, 1.5vw, 22px) / 1.3 Inter, Arial, sans-serif;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(5px);
+    transition: opacity 200ms ease-out, transform 200ms ease-out;
+  }
+
+  :is(.community_photo_meetup, .community_photo_members, .community_photo_space, .community_photo_gathering, .events_photo, .events_photo_portrait, .events_photo_feature):hover .image_hover_caption,
+  :is(.community_photo_meetup, .community_photo_members, .community_photo_space, .community_photo_gathering, .events_photo, .events_photo_portrait, .events_photo_feature):focus-within .image_hover_caption {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   :is(.button_pill, .button_events_community) {
@@ -49,6 +74,7 @@
   @media (prefers-reduced-motion: reduce) {
     .navigation_hover_link::after,
     :is(.community_photo, .community_photo_meetup, .community_photo_members, .community_photo_space, .community_photo_gathering, .events_photo, .events_photo_portrait, .events_photo_feature, .events_photo_calendar)::after,
+    .image_hover_caption,
     :is(.button_pill, .button_events_community) {
       transition: none;
     }
