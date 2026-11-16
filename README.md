@@ -148,3 +148,155 @@ Use the real file paths in **git add**, not the example path above. Do not force
 - [Astro pages and routing](https://docs.astro.build/en/guides/routing/)
 - [Astro components](https://docs.astro.build/en/basics/astro-components/)
 - [Astro deployment](https://docs.astro.build/en/guides/deploy/)
+---
+
+# Dansk — KindDesign-webstedet
+
+Dette repository indeholder KindDesign-webstedet, som er bygget med Astro. Webstedet er statisk og består af genanvendelige Astro-komponenter. Projektet har også nogle React-afhængigheder via Astros React-integration.
+
+## Kom godt i gang
+
+Brug Node.js version 22.23.4 eller nyere. Kør kommandoerne fra projektets rodmappe:
+
+    npm install
+    npm run dev
+
+Astro viser den lokale adresse i terminalen, normalt **http://localhost:4321/**. Lad terminalen være åben, mens du arbejder. Tryk **Ctrl+C** i terminalen for at stoppe serveren.
+
+Byg websitet, før du committer:
+
+    npm run build
+
+Build-filerne bliver skrevet til **dist/**. Hvis du vil se buildet lokalt:
+
+    npm run preview
+
+Et andet tilgængeligt script:
+
+    npm run astro -- --help
+
+## Repository-struktur
+
+    .
+    ├── .github/
+    │   └── workflows/
+    │       └── deploy.yml       # Bygger og udgiver GitHub Pages ved push til main
+    ├── public/
+    │   ├── images/
+    │   │   ├── about/           # Billeder, collage-dele og SVG-filer til About-siden
+    │   │   ├── community/       # Billeder til community-sektionen
+    │   │   └── events/          # Eventbilleder og grafik
+    │   ├── home-hero-animated-background.gif
+    │   ├── home-hero-animated-background.webp
+    │   └── kind-design-logo.png
+    ├── src/
+    │   ├── assets/              # Importerede assets, som Astro/Vite behandler
+    │   ├── components/          # Genanvendelige sidesektioner og fælles UI
+    │   ├── layouts/             # Fælles sideskabelon
+    │   ├── lib/                 # Hjælpekode og kode til specialeffekter
+    │   └── pages/               # URL-ruter; filnavnene bestemmer URL'erne
+    ├── supabase/
+    │   └── migrations/          # SQL-migrationskladder; de er ikke anvendt
+    ├── .env.example             # Pladsholdere for miljøvariabler
+    ├── astro.config.mjs
+    ├── netlify.toml
+    ├── package.json
+    └── package-lock.json
+
+**node_modules/**, **.astro/**, **dist/** og lokale **.env**-filer er genererede, private eller maskinafhængige. Git ignorerer dem, og de må ikke committes.
+
+## Sider og komponenter
+
+Astro opretter ruter ud fra filerne i **src/pages/**:
+
+| Fil | URL | Nuværende formål |
+| --- | --- | --- |
+| **src/pages/index.astro** | **/** | Forsiden, sammensat af hero-, community-, events-, kontakt- og footer-komponenterne. |
+| **src/pages/about.astro** | **/about** | About-siden, sammensat af dens About*-sektionskomponenter. |
+| **src/pages/event.astro** | **/event** | Event-ruten. Den genbruger aktuelt AboutEvents.astro; lav en særskilt eventkalender-sektion, når den separate eventkalender skal implementeres. |
+| **src/pages/products.astro** | **/products** | Skelet til produktoversigten, som bruger Pcard.astro. Den lokale produktliste er tom indtil videre. |
+| **src/pages/details/[id].astro** | **/details/:id** | Dynamisk produktside, der bruger getStaticPaths() og Astro-props. Den genererer aktuelt ingen produktsider, fordi der ikke findes en datakilde til produkter. |
+
+Hold sidefilerne enkle: importér den fælles Layout.astro, og importér og placer derefter sidens sektionskomponenter. Læg genanvendelige sektioner og kontroller i **src/components/** i stedet for at kopiere den samme markup til flere sider.
+
+### Fælles komponenter og sektionskomponenter
+
+- **Layout.astro** indeholder dokumentets grundstruktur, den globale header, fælles hover-adfærd og indholdets slot.
+- **Header.astro** indeholder navigationen og brandlinket, som bruges på hele websitet.
+- **Hover.astro** indeholder fælles hover- og fokuseffekter.
+- **Buttons.astro** definerer genanvendelige linkknap-varianter. Brug dens variant-prop i stedet for at oprette en ny styling til et mønster, der allerede findes.
+- **Hero.astro**, **CommunitySection.astro**, **EventsSection.astro**, **ContactSection.astro** og **SiteFooter.astro** udgør forsiden.
+- **AboutHero.astro**, **AboutWelcome.astro**, **AboutStory.astro**, **AboutJoinCommunity.astro**, **AboutEvents.astro**, **AboutContact.astro** og **AboutFooter.astro** udgør About-siden.
+- **Pcard.astro** er den genanvendelige produktkomponent.
+
+Hvis en komponent bruges på flere sider, skal du undersøge alle dens anvendelser, før du ændrer markup eller styling.
+
+## Billeder og andre assets
+
+- Læg offentlige billeder i de eksisterende undermapper i **public/images/**. Vælg mappen, der passer til siden eller sektionen.
+- Filer i **public/** serveres som statiske assets. Sørg for, at billedstier virker både lokalt fra roden og med GitHub Pages' base-sti. Følg det eksisterende mønster **import.meta.env.BASE_URL.replace(/\/$/, '') + '/images/…'**, som bruges i sidekomponenterne.
+- Bevar billedets proportioner, og tilpas udsnittet i CSS med **object-fit**, **object-position** og beholderens eksisterende dimensioner. Erstat ikke et kildebillede, og brug ikke et screenshot af en hel side, hvor der forventes separate assets.
+- Skriv en beskrivende **alt**-tekst til billeder med betydning. Brug **alt=""** til dekorative billeder. Indlæs billeder længere nede på siden med lazy loading, hvor det passer.
+- Hero-animationens filer ligger i **public/**. Sørg for, at referencer til dem håndterer base-stien på samme måde som de andre offentlige assets.
+
+## Retningslinjer for Astro-kode
+
+- Brug **.astro**-komponenter til projektets sider og sektioner. Sidefiler skal ligge i **src/pages/**, og genanvendelige visuelle sektioner skal ligge i **src/components/**.
+- Følg den eksisterende sidekonvention: importér komponenter øverst i frontmatter, og sammensæt dem derefter i det fælles layout.
+- Send data til komponenter via props. Følg mønstrene i **Buttons.astro** og **Pcard.astro**. For en statisk dynamisk rute returnerer **getStaticPaths()** rutens params og props; siden læser værdierne fra **Astro.props**.
+- Placér styles ved siden af den komponent, de hører til. Brug kun **<style is:global>** til styles, der bevidst skal deles på hele websitet.
+- Eksisterende CSS-klassenavne bruger enkelte underscores mellem ord, f.eks. **community_photo_meetup**. Fortsæt den konvention: brug ikke mellemrum eller dobbelt underscore i klassenavne, og undgå bindestreger i klassenavne.
+- Bevar responsive styles, tastaturfokus-styles, semantiske overskrifter og **prefers-reduced-motion**, når du redigerer fælles UI.
+- Tilføj ikke en ny afhængighed til en lille funktion, før du har undersøgt, om Astro eller de eksisterende komponenter allerede kan løse opgaven.
+- Hold kodeændringen afgrænset. Undlad at formatere eller erstatte uvedkommende markup, når du arbejder på én sektion.
+
+## Aktuel status for data og Supabase
+
+Websitet kalder ikke Supabase API'et i øjeblikket. Produktsiderne bruger et tomt lokalt array, så det statiske site kan buildes uden databaseoplysninger. Filerne i **supabase/migrations/** er kun SQL-kladder. De betyder ikke, at en database er oprettet, eller at migrations er blevet anvendt. Tilføj ikke Supabase-miljøvariabler eller API-kald igen, før teamet har konfigureret projektet og aftalt API- og dataflowet.
+
+**.env.example** indeholder pladsholdere, ikke fungerende adgangsoplysninger. Commit aldrig **.env**, API-nøgler, adgangstokens eller andre hemmeligheder.
+
+## Git-arbejdsgang
+
+Den fælles deploy-branch er **main** på remoten **origin** (**T09-Team-8/T09_org_repo**). **main** udgiver automatisk websitet via GitHub Actions. Repository'et er også sat op til Netlify-builds via **netlify.toml**.
+
+Konfigurér hver lokal kopi én gang, så lokale commits rebase'es ved pull, og den gamle fast-forward-only-indstilling fjernes:
+
+    git config --local pull.rebase true
+    git config --local --unset-all pull.ff
+    git branch --set-upstream-to=origin/main main
+
+Hvis **git config --local --unset-all pull.ff** siger, at indstillingen ikke findes, kan du fortsætte. Det betyder blot, at kopien ikke havde den gamle indstilling.
+
+Før du begynder at arbejde, skal du kontrollere branch og arbejdsmappe:
+
+    git status --short --branch
+    git pull --rebase origin main
+
+Hvis du har ændringer, der ikke er committed, skal du committe eller gemme dem, før du puller. Pull ikke oven i arbejde, du ikke har gemt.
+
+Når du er færdig, skal du gennemgå ændringerne og kun committe de filer, du har arbejdet på:
+
+    git status --short
+    git diff
+    git add path/to/file-you-changed
+    git diff --cached
+    git commit -m "Describe the change"
+    git pull --rebase origin main
+    git push origin main
+
+Erstat eksempelstien i **git add** med den rigtige filsti. Force-push ikke til **main**, og commit ikke **.env**, **node_modules/**, **.astro/** eller **dist/**. Hvis Git melder om en konflikt under rebase, skal du løse konfliktmarkeringerne i den berørte fil, stage filen og køre **git rebase --continue**. Hvis du vil annullere rebase, skal du køre **git rebase --abort**. Rebase undgår unødvendige merge-commits, men kan ikke forhindre konflikter, hvis flere personer ændrer de samme linjer. Koordinér ændringer i fælles filer som **Header.astro**, **Layout.astro** og delte sektioner.
+
+## Build og deployment-stier
+
+- Lokal udvikling serverer websitet fra **/**. Brug derfor **http://localhost:4321/**.
+- GitHub Pages-workflowet sætter **ASTRO_BASE=/T09_org_repo**; **astro.config.mjs** bruger denne base til organisationens Pages-deployment.
+- Netlify kører **npm run build** og udgiver **dist/**, som angivet i **netlify.toml**.
+- Bevar den konfigurerede base-sti, når du tilføjer links eller billedstier. Skriv ikke **/T09_org_repo/** direkte ind i sidekomponenter.
+
+## Referencer
+
+- [Astros projektstruktur](https://docs.astro.build/en/basics/project-structure/)
+- [Astro-sider og routing](https://docs.astro.build/en/guides/routing/)
+- [Astro-komponenter](https://docs.astro.build/en/basics/astro-components/)
+- [Astro-deployment](https://docs.astro.build/en/guides/deploy/)
