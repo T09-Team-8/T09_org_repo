@@ -1,0 +1,89 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const endpoint = import.meta.env.SUPABASE_URL + '/rest/v1/products?select=*';
+  const apiKey = import.meta.env.SUPABASE_ANON_KEY;
+
+  const response = await fetch(endpoint, {
+    headers: {
+      apikey: apiKey,
+    },
+  });
+
+  const products = await response.json();
+
+  return products.map((product) => {
+    return {
+      params: { id: product.id.toString() },
+      props: { product },
+    };
+  });
+}
+
+const { product } = Astro.props;
+---
+
+<Layout>
+  <main class="product_page">
+    <article class="product_detail">
+      <img class="product_image" src={product.image} alt={product.title} />
+      <div class="product_information">
+        <h1>{product.title}</h1>
+        <p class="product_price">{product.price}</p>
+        <p>{product.description}</p>
+        <p>{product.category}</p>
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .product_page {
+    min-height: calc(100vh - var(--site-header-height));
+    padding: 64px 5%;
+    box-sizing: border-box;
+    background: #f5f0e0;
+    color: #2b0f13;
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  .product_detail {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 48px;
+    width: min(100%, 1440px);
+    margin: 0 auto;
+  }
+
+  .product_image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: #dedbd0;
+  }
+
+  .product_information h1 {
+    margin: 0 0 24px;
+    font-family: Antonio, Arial, sans-serif;
+    font-size: clamp(36px, 5vw, 72px);
+    font-weight: 400;
+  }
+
+  .product_information p {
+    margin: 0 0 20px;
+    line-height: 1.6;
+  }
+
+  .product_price {
+    font-weight: 600;
+  }
+
+  @media (max-width: 700px) {
+    .product_detail {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  }
+</style>
