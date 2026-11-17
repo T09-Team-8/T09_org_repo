@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+   
+   
+   
+   <section class="hero-text">
+        <h1>Event <br>Calendar</h1>
+    </section>
+
+<style>
+    @font-face {
+    font-family: antonio;
+    src: url(fonts/antonio.ttf);
+}
+
+.hero-text h1{
+    text-align: left;
+    position: relative;
+    font-family: "Antonio", sans-serif;
+    font-size: 128px;
+    font-weight: 400;
+    line-height: 1;
+    color: #000;
+    opacity: 0.59;
+  }
+  
+@media (min-width: 768px) {
+
+.hero-text h1{
+    left: 80px;
+
+}
+}
+
+</style>
