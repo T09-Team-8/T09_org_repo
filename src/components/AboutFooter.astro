@@ -1,17 +1,185 @@
 ---
-const footerBackground = '--about_footer_background: url("' + import.meta.env.BASE_URL.replace(/\/$/, '') + '/images/about/footer-contact-background.svg")';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<footer class="about_footer">
-      <div class="about_footer_brand">
-        <a href={import.meta.env.BASE_URL.replace(/\/$/, "") + "/"} class="about_footer_logo">Kind Design</a>
-        <p>COMMUNITY / EVENTS / COLLABORATIONS</p>
-      </div>
-      <div class="about_footer_contact" style={footerBackground}>
-        <h2>FIND US</h2>
-        <p>Share, learn and build together.</p>
-        <a href="https://www.instagram.com/kinddesign.cph/" target="_blank" rel="noreferrer">INSTAGRAM <span aria-hidden="true">↗</span></a>
-        <a href="https://www.linkedin.com/company/kinddesign-cph/" target="_blank" rel="noreferrer">LINKEDIN <span aria-hidden="true">↗</span></a>
-        <a href="mailto:kinddesign.cph@gmail.com">KINDDESIGN.CPH@GMAIL.COM</a>
-      </div>
-    </footer>
 
+<footer class="about_footer">
+
+  <!-- LEFT COLUMN -->
+  <div class="about_footer_brand">
+    <a href={base + '/'} class="about_footer_logo">
+      Kind Design
+    </a>
+    <p>COMMUNITY / EVENTS / COLLABORATIONS</p>
+  </div>
+
+  <!-- MIDDLE COLUMN -->
+  <div class="about_footer_middle">
+
+    <div class="about_footer_column">
+      <h3>LET'S<br />CONNECT</h3>
+      <p>Meet like-minded<br />creatives.</p>
+    </div>
+
+    <div class="about_footer_column">
+      <h3>INSPIRE</h3>
+      <p>Exchange ideas and new<br />perspectives.</p>
+    </div>
+
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="about_footer_contact">
+    <h3>FIND US</h3>
+    <p>Share, learn and build together.</p>
+
+    <div class="about_footer_links">
+      <a href="https://www.instagram.com/kinddesign.cph/" target="_blank" rel="noreferrer">
+        INSTAGRAM ↗
+      </a>
+
+      <a href="https://www.linkedin.com/company/kinddesign-cph/" target="_blank" rel="noreferrer">
+        LINKEDIN ↗
+      </a>
+
+      <a href="mailto:kinddesign.cph@gmail.com">
+        KINDDESIGN.CPH@GMAIL.COM
+      </a>
+    </div>
+  </div>
+
+</footer>
+
+<style>
+  .about_footer {
+    display: grid;
+    grid-template-columns: 22.5% 46% 31.5%;
+    width: 100%;
+    min-height: 168px;
+    box-sizing: border-box;
+    border-top: 1px solid #2b0f13;
+    font-family: inherit;
+    color: #2b0f13;
+  }
+
+  /* LEFT COLUMN */
+
+  .about_footer_brand {
+    box-sizing: border-box;
+    padding: 22px 24px;
+    background: #f4f18d;
+  }
+
+  .about_footer_logo {
+    display: inline-block;
+    color: #2b0f13;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  .about_footer_brand p {
+    margin: 5px 0 0;
+    font-size: 6px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+  }
+
+  /* MIDDLE COLUMNS */
+
+  .about_footer_middle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-sizing: border-box;
+    padding: 22px 22px;
+    background: #c9e9f6;
+  }
+
+  .about_footer_column h3 {
+    margin: 0 0 4px;
+    font-size: 12px;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  .about_footer_column p {
+    margin: 0;
+    font-size: 8px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  /* RIGHT COLUMN */
+
+  .about_footer_contact {
+    box-sizing: border-box;
+    padding: 22px 14px;
+    background: #59413f;
+    color: #f5f0df;
+  }
+
+  .about_footer_contact h3 {
+    margin: 0 0 4px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .about_footer_contact > p {
+    margin: 0 0 12px;
+    font-size: 8px;
+    line-height: 1.4;
+  }
+
+  .about_footer_links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+  }
+
+  .about_footer_links a {
+    color: #f5f0df;
+    font-size: 5px;
+    font-weight: 400;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+  }
+
+  .about_footer_links a:hover {
+    opacity: 0.65;
+  }
+
+  /* RESPONSIVE */
+
+  @media (max-width: 700px) {
+    .about_footer {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .about_footer_brand {
+      min-height: 130px;
+    }
+
+    .about_footer_middle {
+      min-height: 130px;
+      padding: 22px 14px;
+    }
+
+    .about_footer_contact {
+      grid-column: 1 / -1;
+      min-height: 150px;
+      padding: 22px 24px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .about_footer {
+      grid-template-columns: 1fr;
+    }
+
+    .about_footer_brand,
+    .about_footer_middle,
+    .about_footer_contact {
+      grid-column: auto;
+    }
+  }
+</style>

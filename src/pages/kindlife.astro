@@ -1,0 +1,665 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AboutFooter from '../components/AboutFooter.astro';
+
+const carouselOne = [
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/cph/Kind%20Design%20(1).webp', alt: 'Kind Design Copenhagen gathering' },
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/cph/Kind%20Design%20(2).webp', alt: 'Kind Design Copenhagen event' },
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/cph/Kind%20Design%20(3).webp', alt: 'Kind Design Copenhagen community' },
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/cph/Kind%20Design%20(4).webp', alt: 'Kind Design Copenhagen gathering' },
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/cph/Kind%20Design%20(5).webp', alt: 'Kind Design Copenhagen event' }
+];
+
+const carouselTwo = [
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/ber/Kind%20Design%20(1).webp', alt: 'Kind Design Berlin gathering' },
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/ber/Kind%20Design%20(3).webp', alt: 'Kind Design Berlin event' },
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/ber/Kind%20Design%20(4).webp', alt: 'Kind Design Berlin community' },
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/ber/Kind%20Design%20(5).webp', alt: 'Kind Design Berlin event' },
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/ber/Kind%20Design%20(6).webp', alt: 'Kind Design Berlin event' },
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/ber/Kind%20Design%20(8).webp', alt: 'Kind Design Berlin community' },
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/ber/Kind%20Design%20(9).webp', alt: 'Kind Design Berlin community' },
+{ image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/ber/Kind%20Design%20(10).webp', alt: 'Kind Design Berlin community' }
+];
+
+const carouselThree = [
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/ba/Kind%20Design%20(1).webp', alt: 'Kind Design Buenos Aires gathering' },
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/ba/Kind%20Design%20(3).webp', alt: 'Kind Design Buenos Aires event' },
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/ba/Kind%20Design%20(4).webp', alt: 'Kind Design Buenos Aires venue' },
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/ba/Kind%20Design%20(8).webp', alt: 'Kind Design Buenos Aires community' },
+  { image: 'https://vvwgkltqnmzpbpxuacwx.supabase.co/storage/v1/object/public/kinddesign/ba/Kind%20Design%20(5).webp', alt: 'Kind Design Buenos Aires community' }
+];
+---
+
+<Layout>
+  <main class="kindlife">
+    <div class="film_stage">
+
+      <!-- HERO -->
+      <section class="kindlife_hero">
+
+        <div class="hero_title">
+          <h1>Kind<br />Life</h1>
+          <p class="hero_intro">
+            EXPLORE MOMENTS, PEOPLE AND<br />VIBES ↘
+          </p>
+        </div>
+
+        <!-- HANNA TALK IMAGE – PLACED INSIDE HERO -->
+        <div class="hero_feature">
+          <a class="hero_image" href="/events/" aria-label="Explore upcoming events">
+            <img
+              src="/images/hanna-talk.jpg"
+              alt="Hanna presenting Designing for an Ambivalent Web"
+            />
+          </a>
+
+          <a class="hero_event_link" href="/events/">
+            FOR UPCOMING<br />EVENTS ↗
+          </a>
+        </div>
+
+      </section>
+
+      <!-- FILM ROLL CAROUSELS -->
+      <div class="film_rows">
+
+        <!-- CPH / BLACK -->
+        <section class="carousel_section black_carousel" aria-label="Copenhagen images">
+          <span class="carousel_location">CPH</span>
+
+          <div class="carousel_track" id="community-carousel">
+            {carouselOne.map((item) => (
+              <article class="carousel_card">
+                <div class="carousel_image">
+                  <img src={item.image} alt={item.alt} loading="lazy" />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div class="carousel_controls controls-right">
+            <button
+              class="carousel_button"
+              data-direction="1"
+              data-carousel="community-carousel"
+              aria-label="Scroll images to the right"
+            >
+              <svg viewBox="0 0 100 60" aria-hidden="true">
+                <path d="M10 30 H85 M60 5 L85 30 L60 55" />
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- BER / BROWN -->
+        <section class="carousel_section brown_carousel" aria-label="Berlin images">
+          <span class="carousel_location">BER</span>
+
+          <div class="carousel_track" id="creation-carousel">
+            {carouselTwo.map((item) => (
+              <article class="carousel_card">
+                <div class="carousel_image">
+                  <img src={item.image} alt={item.alt} loading="lazy" />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div class="carousel_controls controls-left">
+            <button
+              class="carousel_button"
+              data-direction="1"
+              data-carousel="creation-carousel"
+              aria-label="Scroll images to the left"
+            >
+              <svg viewBox="0 0 100 60" aria-hidden="true">
+                <path d="M90 30 H15 M40 5 L15 30 L40 55" />
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- BA / BLUE -->
+        <section class="carousel_section blue_carousel" aria-label="Buenos Aires images">
+          <span class="carousel_location location-right">BA</span>
+
+          <div class="carousel_track" id="inspiration-carousel">
+            {carouselThree.map((item) => (
+              <article class="carousel_card">
+                <div class="carousel_image">
+                  <img src={item.image} alt={item.alt} loading="lazy" />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div class="carousel_controls controls-right">
+            <button
+              class="carousel_button"
+              data-direction="1"
+              data-carousel="inspiration-carousel"
+              aria-label="Scroll images to the right"
+            >
+              <svg viewBox="0 0 100 60" aria-hidden="true">
+                <path d="M10 30 H85 M60 5 L85 30 L60 55" />
+              </svg>
+            </button>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- CLOSING SECTION -->
+    <section class="kindlife_closing">
+      <p>
+        A community is built by the people who are part of it.
+        Come as you are and become part of KindDesign.
+      </p>
+
+      <a
+        class="community_button"
+        href="https://www.instagram.com/kinddesign.cph/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        JOIN THE COMMUNITY ↗
+      </a>
+
+      <img
+        class="be-kind-animation"
+        src={import.meta.env.BASE_URL.replace(/\/$/, '') + '/gifs/be-kind-animation.gif'}
+        alt=""
+        aria-hidden="true"
+      />
+    </section>
+
+  </main>
+
+  <AboutFooter />
+</Layout>
+
+<script>
+  // Billederne bevæger sig, når man klikker på pilene
+  document.querySelectorAll<HTMLButtonElement>(
+    '[data-carousel][data-direction]'
+  ).forEach((button) => {
+    button.addEventListener('click', () => {
+      const trackId = button.dataset.carousel;
+      const direction = Number(button.dataset.direction);
+
+      if (!trackId || !direction) return;
+
+      const track = document.getElementById(trackId);
+      if (!track) return;
+
+      const card = track.querySelector<HTMLElement>('.carousel_card');
+      if (!card) return;
+
+      const styles = window.getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+      const distance = card.getBoundingClientRect().width + gap;
+
+      track.scrollBy({
+        left: distance * direction,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+<style>
+  /* GENERAL */
+
+  .kindlife {
+    position: relative;
+    width: 100%;
+    overflow: clip;
+    background: #f5f0e0;
+    color: #2b0f13;
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  /* HERO */
+
+  .film_stage {
+    position: relative;
+    isolation: isolate;
+    background: #f4f18d;
+  }
+
+  .kindlife_hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    align-items: center;
+    gap: 6%;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 650px;
+    padding: 70px 5%;
+    background: #f4f18d;
+    color: #59413f;
+  }
+
+  .hero_title {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero_title h1 {
+    margin: 0;
+    font-family: Antonio, Impact, sans-serif;
+    font-size: clamp(100px, 13vw, 190px);
+    font-weight: 400;
+    line-height: 1.12;
+    color: #59413f;
+  }
+
+  .hero_intro {
+    margin: 25px 0 0;
+    color: #030001;
+    font-size: clamp(16px, 1.7vw, 23px);
+    font-weight: 700;
+    line-height: 1.08;
+  }
+
+  /* HANNA TALK IMAGE AND EVENT LINK */
+
+  .hero_feature {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+    max-width: 410px;
+    justify-self: end;
+  }
+
+  .hero_image {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border: 3px solid #38281f;
+    border-radius: 5px;
+  }
+
+  .hero_image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 400ms ease;
+  }
+
+  .hero_image:hover img {
+    transform: scale(1.04);
+  }
+
+  .hero_event_link {
+    color: #2b0f13;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: opacity 200ms ease;
+  }
+
+  .hero_event_link:hover {
+    opacity: 0.6;
+  }
+
+  /* FILM ROLLS */
+
+  .film_rows {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  .carousel_section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: clamp(240px, 27vw, 340px);
+    margin: 0;
+    padding: 28px 58px;
+    overflow: hidden;
+  }
+
+  .carousel_track {
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 1.6vw, 24px);
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+
+  .carousel_track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel_card {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .carousel_image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .carousel_image img {
+    display: block;
+    width: auto;
+    height: 100%;
+    max-width: none;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 300ms ease, filter 300ms ease;
+  }
+
+  .carousel_card:hover .carousel_image img {
+    transform: scale(1.04);
+    filter: brightness(1.08);
+  }
+
+  /* LOCATION LABELS */
+
+  .carousel_location {
+    position: absolute;
+    z-index: 4;
+    left: 14px;
+    bottom: 12px;
+    color: inherit;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    pointer-events: none;
+  }
+
+  .carousel_location.location-right {
+    left: auto;
+    right: 14px;
+  }
+
+  /* ARROWS */
+
+  .carousel_controls {
+    position: absolute;
+    z-index: 5;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    pointer-events: none;
+  }
+
+  .controls-right {
+    justify-content: flex-end;
+  }
+
+  .controls-left {
+    justify-content: flex-start;
+  }
+
+  .carousel_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 62px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: currentColor;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: transform 180ms ease, opacity 180ms ease;
+  }
+
+  .carousel_button:hover {
+    background: transparent;
+    transform: scale(1.12);
+  }
+
+  .carousel_button svg {
+    display: block;
+    width: 42px;
+    height: 28px;
+    overflow: visible;
+  }
+
+  .carousel_button svg path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* CAROUSEL COLORS */
+
+  .black_carousel {
+    background: #000;
+    color: #f5f0e0;
+  }
+
+  .brown_carousel {
+    background: #59413f;
+    color: #f5f0e0;
+  }
+
+  .blue_carousel {
+    background: #cceaf7;
+    color: #000;
+  }
+
+  /* CLOSING SECTION */
+
+  .kindlife_closing {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    min-height: 515px;
+    padding: 65px 8%;
+    overflow: hidden;
+    background: #f5f0e0;
+    color: #000;
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  .kindlife_closing > p {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    margin: 0 0 25px;
+    color: #000;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .kindlife_closing .community_button {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 12px 30px;
+    border: 2px solid #000;
+    border-radius: 999px;
+    background: transparent;
+    color: #000;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+
+  .kindlife_closing .community_button:hover {
+    background: #cceaf7;
+    color: #000;
+  }
+
+  /* BE KIND GIF - DESKTOP */
+
+  .be-kind-animation {
+    position: absolute;
+    z-index: 1;
+    top: 85px;
+    right: 8%;
+    width: 280px;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  /* MOBILE */
+
+  @media (max-width: 700px) {
+
+    .kindlife_hero {
+      grid-template-columns: 1fr;
+      gap: 0;
+      min-height: auto;
+      padding: 55px 24px 65px;
+    }
+
+    .hero_title h1 {
+      font-size: clamp(90px, 18vw, 130px);
+      line-height: 1.05;
+    }
+
+    .hero_intro {
+      margin-top: 24px;
+      font-size: 16px;
+    }
+
+    .hero_feature {
+      justify-self: start;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 85px;
+      gap: 20px;
+    }
+
+    .hero_event_link {
+      font-size: 19px;
+    }
+
+    .film_rows {
+      gap: 16px;
+      padding-bottom: 0;
+    }
+
+    .carousel_section {
+      height: 210px;
+      padding: 20px 40px;
+    }
+
+    .carousel_track {
+      gap: 12px;
+    }
+
+    .carousel_location {
+      left: 9px;
+      bottom: 8px;
+      font-size: 10px;
+    }
+
+    .carousel_location.location-right {
+      right: 9px;
+    }
+
+    .carousel_controls {
+      padding: 0 2px;
+    }
+
+    .carousel_button {
+      width: 34px;
+      height: 44px;
+    }
+
+    .carousel_button svg {
+      width: 28px;
+      height: 20px;
+    }
+
+    /* CLOSING SECTION - MOBILE */
+
+    .kindlife_closing {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: auto;
+      padding: 55px 24px 45px;
+      text-align: center;
+    }
+
+    .kindlife_closing > p {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 0 24px;
+      font-size: 15px;
+      text-align: center;
+      display: none;
+    }
+
+    .kindlife_closing .community_button {
+      align-self: center;
+      padding: 11px 24px;
+      font-size: 14px;
+    }
+
+    .be-kind-animation {
+      position: relative;
+      display: block;
+      top: auto;
+      right: auto;
+      width: 190px;
+      max-width: 65%;
+      height: auto;
+      margin: 35px auto 0;
+    }
+  }
+
+  /* REDUCED MOTION */
+
+  @media (prefers-reduced-motion: reduce) {
+    .carousel_track {
+      scroll-behavior: auto;
+    }
+
+    .carousel_button,
+    .carousel_image img {
+      transition: none;
+    }
+  }
+</style>
