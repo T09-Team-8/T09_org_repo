@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<section class="event-container">
+    <div class="space">
+        <h3>AUGUST</h3>
+<div class="event">
+    <img src="../../images/events/event1.webp" alt="">
+    <img src="../../images/events/event2.webp" alt="">
+    <img src="../../images/events/event3.webp" alt="">
+    <img src="../../images/events/event4.webp" alt="">
+    <img src="../../images/events/event5.webp" alt="">
+    <img src="../../images/events/event6.webp" alt="">
+</div>
+</div>
+
+<div class="space">
+        <h3>JULY</h3>
+<div class="event">
+    <img src="../../images/events/events-2-01.webp" alt="">
+    <img src="../../images/events/events-2-02.webp" alt="">
+    <img src="../../images/events/events-2-03.webp" alt="">
+    <img src="../../images/events/events-2-04.webp" alt="">
+    <img src="../../images/events/events-2-05.webp" alt="">
+    <img src="../../images/events/events-2-06.webp" alt="">
+</div> 
+</div>
+    </section>
+
+
+
+
+<style>
+
+.space{
+    margin-top: 100px;    
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: inter;
+    src: url(fonts/inter.ttf);
+}
+
+@media (min-width: 768px) {
+
+
+.event{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.event-container{
+    margin: 100px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+} 
+
+
+
+
+
+.month{
+    margin-top: 50px;
+
+
+}
+
+.event img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ 
+}
+
+h3{
+    text-align: left;
+    font-size: 20px;
+    color: #000;
+    margin-top: 20px;
+    font-family: inter;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+@media (max-width: 768px) {
+
+
+    .event img{
+        width: 100%;
+    } 
+}
+
+
+.event {
+    overflow: hidden;
+}
+
+img:hover{
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+    filter: brightness(0.5);
+}
+
+</style>

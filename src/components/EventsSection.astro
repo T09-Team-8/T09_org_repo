@@ -2,6 +2,7 @@
 import Button from './Buttons.astro';
 
 const instagram = 'https://www.instagram.com/kinddesign.cph/';
+const lumaHref = 'https://luma.com/user/kinddesign';
 ---
 
 <section class="events" id="events" aria-labelledby="events-heading">
@@ -11,31 +12,48 @@ const instagram = 'https://www.instagram.com/kinddesign.cph/';
     <h2 id="events-heading">COME AS YOU ARE.<br />LEAVE INSPIRED.</h2>
     <Button href={instagram} variant="events_community" target="_blank">JOIN THE COMMUNITY</Button>
   </div>
+
   <div class="events_gallery" role="group" aria-label="KindDesign event images">
     <div class="events_row_top">
-      <figure class="events_photo"><img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-item-01.jpg"} alt="KindDesign event attendees together" loading="lazy" /></figure>
-      <figure class="events_photo"><img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-item-02.jpg"} alt="KindDesign community stickers and visual identity" loading="lazy" /></figure>
-      <figure class="events_photo_portrait"><img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-shivalini.jpg"} alt="Shivalini Kumar speaking about creative identity" loading="lazy" /></figure>
+
+      <figure class="events_photo"><a class="events_photo_link" href={lumaHref} target="_blank" rel="noreferrer"><img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-item-01.webp"} alt="KindDesign event attendees together" loading="lazy" /><span class="image_hover_caption" aria-hidden="true">Click here to see event</span></a></figure>
+
+      <figure class="events_photo"><a class="events_photo_link" href={lumaHref} target="_blank" rel="noreferrer"><img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-item-02.webp"} alt="KindDesign community stickers and visual identity" loading="lazy" /><span class="image_hover_caption" aria-hidden="true">Click here to see event</span></a></figure>
+
+      <figure class="events_photo_portrait"><a class="events_photo_link" href={lumaHref} target="_blank" rel="noreferrer"><img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-shivalini.webp"} alt="Shivalini Kumar speaking about creative identity" loading="lazy" /><span class="image_hover_caption" aria-hidden="true">Click here to see event</span></a></figure>
+
     </div>
+
     <div class="events_row_middle">
-      <figure class="events_photo_feature"><img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-feature.jpg"} alt="KindDesign event announcement and event information" loading="lazy" /></figure>
+      <figure class="events_photo_feature"><a class="events_photo_link" href={lumaHref} target="_blank" rel="noreferrer"><img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-feature.webp"} alt="KindDesign event announcement and event information" loading="lazy" /><span class="image_hover_caption" aria-hidden="true">Click here to see event</span></a></figure>
       <figure class="events_photo_calendar">
         <div class="events_calendar_rotation" aria-hidden="true">
-          <img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-feature.jpg"} alt="" loading="lazy" />
+          <img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-feature.webp"} alt="" loading="lazy" />
         </div>
         <div class="events_calendar_backing" aria-hidden="true"></div>
-        <a href={instagram} target="_blank" rel="noreferrer">EVENT CALENDAR ↗</a>
+        <a class="events_calendar_link" href={lumaHref} target="_blank" rel="noreferrer" aria-label="View KindDesign events on Luma"><span>EVENT CALENDAR ↗</span></a>
       </figure>
     </div>
     <div class="events_row_bottom">
-      <figure class="events_photo"><img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-item-04.jpg"} alt="KindDesign community sharing an event" loading="lazy" /></figure>
-      <figure class="events_photo"><img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-item-05.jpg"} alt="A KindDesign speaker at an event" loading="lazy" /></figure>
-      <figure class="events_photo"><img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-item-06.jpg"} alt="KindDesign event space and creative materials" loading="lazy" /></figure>
+      <figure class="events_photo"><a class="events_photo_link" href={lumaHref} target="_blank" rel="noreferrer"><img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-item-04.webp"} alt="KindDesign community sharing an event" loading="lazy" /><span class="image_hover_caption" aria-hidden="true">Click here to see event</span></a></figure>
+      <figure class="events_photo"><a class="events_photo_link" href={lumaHref} target="_blank" rel="noreferrer"><img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-item-05.webp"} alt="A KindDesign speaker at an event" loading="lazy" /><span class="image_hover_caption" aria-hidden="true">Click here to see event</span></a></figure>
+      <figure class="events_photo"><a class="events_photo_link" href={lumaHref} target="_blank" rel="noreferrer"><img src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/images/events/events-item-06.webp"} alt="KindDesign event space and creative materials" loading="lazy" /><span class="image_hover_caption" aria-hidden="true">Click here to see event</span></a></figure>
     </div>
   </div>
 </section>
 <style>
-  .events { position: relative; box-sizing: border-box; width: 100%; height: calc(100svh - var(--site-header-height)); min-height: 0; overflow: hidden; background: #f5f0e0; color: #2b0f13; font-family: Inter, Arial, sans-serif; }
+
+  .events { 
+    position: relative; 
+    box-sizing: border-box; 
+    width: 100%; 
+    height: calc(100svh - var(--site-header-height)); 
+    min-height: 0; 
+    overflow: hidden; 
+    background: #f5f0e0; 
+    color: #2b0f13; 
+    font-family: Inter, Arial, sans-serif; 
+  }
   .events_panel { position: absolute; inset: 0 auto 0 0; width: 33.49%; background: rgb(244 240 122 / 78%); }
   .events_copy { position: absolute; z-index: 1; top: 19.81%; left: max(4.76%, calc((100% - 1681px) / 2 + 80px)); width: min(29%, 470px); }
   .events_eyebrow { margin: 0 0 34px; font-size: clamp(20px, 1.9vw, 32px); font-weight: 600; line-height: 1.2; }
@@ -46,6 +64,8 @@ const instagram = 'https://www.instagram.com/kinddesign.cph/';
   .events_row_middle { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   :is(.events_photo, .events_photo_portrait, .events_photo_feature, .events_photo_calendar) { position: relative; min-width: 0; min-height: 0; overflow: hidden; margin: 0; background: #dedbd0; }
   :is(.events_photo, .events_photo_portrait, .events_photo_feature, .events_photo_calendar) img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .events_photo_link { position: relative; display: block; width: 100%; height: 100%; }
+  .events_photo_link:focus-visible { outline: 3px solid #c7d198; outline-offset: -3px; }
   .events_photo_portrait { box-sizing: border-box; border: 1.473px solid #fff; box-shadow: 0 0 0 0.184px rgb(0 0 0 / 20%), 0 0 0.368px rgb(0 0 0 / 8%), 0 0.368px 1.105px rgb(0 0 0 / 10%); }
   .events_photo_portrait img { position: absolute; top: -2.5%; left: -2.41%; width: 108.96%; height: 107.26%; max-width: none; object-fit: fill; }
   .events_row_top .events_photo:first-child img { position: absolute; top: -0.06%; left: -1.68%; width: 106.48%; height: 110.58%; max-width: none; object-fit: fill; opacity: 0.9; }
@@ -59,38 +79,177 @@ const instagram = 'https://www.instagram.com/kinddesign.cph/';
   .events_photo_calendar { container-type: size; }
   .events_calendar_rotation img { position: absolute; top: -98.65%; left: -53.71%; width: 327.67%; height: 469.12%; max-width: none; object-fit: fill; }
   .events_calendar_backing { position: absolute; z-index: 3; top: 228px; left: 11px; width: 357px; height: 64px; background: #2b0f13; }
-  .events_photo_calendar a { position: absolute; z-index: 4; top: 240px; left: 27px; display: flex; width: 325px; height: 34px; align-items: center; box-sizing: border-box; color: #fff; font-size: 27.802px; font-weight: 600; line-height: 1; text-decoration: none; white-space: nowrap; }
-  .events_photo_calendar a:focus-visible { outline: 3px solid #c7d198; outline-offset: 3px; }
+  .events_photo_calendar > a { position: absolute; z-index: 4; inset: 0; display: block; color: #fff; text-decoration: none; }
+  .events_calendar_link span {position: absolute; top: 240px; left: 27px; display: flex; width: 325px; height: 34px; align-items: center; box-sizing: border-box; font-size: 27.802px; font-weight: 600; line-height: 1; white-space: nowrap; }
+  .events_photo_calendar > a:focus-visible { outline: 3px solid #c7d198; outline-offset: 3px; }
   @media (min-width: 1101px) {
-    .events { height: 1050px; }
-    .events_panel { width: 33.49%; }
-    .events_copy { top: 19.81%; left: 4.76%; width: min(27.96%, 470px); }
+    .events { 
+      height: 1050px; 
+    }
+    .events_panel { 
+      width: 33.49%; 
+    }
+    .events_copy { 
+      top: 19.81%; 
+      left: 4.76%; 
+      width: min(27.96%, 470px); 
+    }
+
     .events_copy :global(.button_events_community) { width: min(100%, 374px); }
-    .events_gallery { top: 3.43%; right: auto; bottom: auto; left: 41.70%; display: block; width: 53.54%; height: 93.14%; }
-    :is(.events_row_top, .events_row_middle, .events_row_bottom) { position: absolute; left: 0; display: grid; width: 100%; }
-    .events_row_top { top: 0; height: 33.13%; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 28.963%; gap: 1.889%; }
-    .events_row_middle { top: 34.764%; height: 33.13%; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.778%; }
-    .events_row_bottom { top: 69.53%; height: 30.47%; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.889%; }
-    .events_calendar_backing { top: 23.313%; left: 1.222%; width: 39.667%; height: 6.544%; }
-    .events_photo_calendar a { top: 24.54%; left: 3%; width: 36.111%; height: 3.477%; font-size: clamp(18px, 1.654vw, 27.802px); }
+
+    .events_gallery { 
+      top: 3.43%; 
+      right: auto; 
+      bottom: auto; 
+      left: 41.70%; 
+      display: block; 
+      width: 53.54%; 
+      height: 93.14%; 
+    }
+    
+    :is(.events_row_top, .events_row_middle, .events_row_bottom) { 
+      position: absolute; 
+      left: 0; 
+      display: grid; 
+      width: 100%; 
+    }
+
+    .events_row_top { 
+      top: 0; 
+      height: 33.13%; 
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 28.963%; 
+      gap: 1.889%; 
+    }
+
+
+    .events_row_middle { 
+      top: 34.764%; 
+      height: 33.13%; 
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); 
+      gap: 1.778%; 
+    }
+
+    .events_row_bottom { 
+      top: 69.53%; 
+      height: 30.47%; 
+      grid-template-columns: repeat(3, minmax(0, 1fr)); 
+      gap: 1.889%; 
+    }
+
+    .events_calendar_backing { 
+      top: 23.313%; 
+      left: 1.222%; 
+      width: 39.667%; 
+      height: 6.544%; 
+    }
+
+    .events_calendar_link span {
+      top: 24.54%; 
+      left: 3%; 
+      width: 36.111%; 
+      height: 3.477%; 
+      font-size: clamp(18px, 1.654vw, 27.802px); 
+    }
   }
 
   @media (max-width: 1100px) {
-    .events_copy { left: 5%; width: 31%; }
-    .events_copy :global(.button_events_community) { width: min(100%, 374px); height: clamp(36px, 2.915vw, 49px); font-size: clamp(14px, 1.1vw, 18.44px); }
-    .events_gallery { right: 5%; left: 40%; }
-    :is(.events_row_top, .events_row_middle, .events_row_bottom), .events_gallery { gap: 10px; }
-    .events_row_top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 28.963%; }
+    
+    .events_copy { 
+      left: 5%; 
+      width: 31%; 
+    }
+
+
+    .events_copy :global(.button_events_community) { 
+      width: min(100%, 374px); 
+      height: clamp(36px, 2.915vw, 49px); 
+      font-size: clamp(14px, 1.1vw, 18.44px); 
+    }
+
+    .events_gallery { 
+      right: 5%; 
+      left: 40%; 
+    }
+    
+    :is(.events_row_top, .events_row_middle, .events_row_bottom), .events_gallery { 
+      gap: 10px; 
+    }
+
+    .events_row_top { 
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 28.963%; 
+    }
   }
+
+
   @media (max-width: 760px) {
-    .events { height: auto; min-height: 0; padding: 64px 24px 48px; }
-    .events_panel { width: 100%; height: 48%; }
-    .events_copy { position: relative; top: auto; left: auto; width: auto; margin-bottom: 36px; transform: none; }
-    .events_eyebrow { margin-bottom: 20px; } .events_copy h2 { margin-bottom: 28px; }
-    .events_gallery { position: relative; inset: auto; display: grid; grid-template-rows: repeat(3, min(34vw, 220px)); gap: 8px; width: auto; height: auto; }
-    :is(.events_row_top, .events_row_middle, .events_row_bottom) { gap: 8px; } .events_photo_calendar a { min-height: 44px; }
-    .events_calendar_rotation { display: none; }
-    .events_calendar_backing { top: auto; bottom: 0; left: 0; width: 100%; height: 44px; }
-    .events_photo_calendar a { top: auto; right: 0; bottom: 0; left: 0; width: 100%; height: 44px; justify-content: center; font-size: 14px; }
+
+    .events { 
+      height: auto; 
+      min-height: 0; 
+      padding: 64px 24px 48px; 
+    }
+
+    .events_panel { 
+      width: 100%; 
+      height: 48%; 
+    }
+
+    .events_copy { 
+      position: relative; 
+      top: auto; 
+      left: auto; 
+      width: auto; 
+      margin-bottom: 36px; 
+      transform: none; 
+    }
+
+    .events_eyebrow { 
+      margin-bottom: 20px; 
+    } 
+
+    .events_copy h2 { 
+      margin-bottom: 28px; 
+    }
+
+    .events_gallery { 
+      position: relative; 
+      inset: auto; 
+      display: grid; 
+      grid-template-rows: repeat(3, min(34vw, 220px)); 
+      gap: 8px; 
+      width: auto; 
+      height: auto; 
+    }
+
+    :is(.events_row_top, .events_row_middle, .events_row_bottom) { 
+      gap: 8px; 
+    } 
+
+    .events_calendar_link span {
+      min-height: 44px; 
+    }
+
+    .events_calendar_rotation { 
+      display: none; 
+    }
+
+    .events_calendar_backing { 
+      top: auto; 
+      bottom: 0; 
+      left: 0;
+      width: 100%; 
+      height: 44px; 
+    }
+
+    .events_calendar_link span {
+      top: auto; 
+      right: 0; 
+      bottom: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 44px; 
+      justify-content: center; 
+      font-size: 14px; 
+    }
   }
 </style>
