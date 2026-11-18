@@ -1,5 +1,5 @@
 
-<header class="site_header">
+<header class:list={["site_header", Astro.url.pathname.startsWith("/kindlife") && "kindlife_header"]}>
   <a class="brand" href={import.meta.env.BASE_URL.replace(/\/$/, "") + "/"} aria-label="Kind Design home">
     <img
       src={import.meta.env.BASE_URL.replace(/\/$/, "") + "/kind-design-logo.png"}
@@ -13,7 +13,7 @@
     <a class="navigation_hover_link" href={import.meta.env.BASE_URL.replace(/\/$/, "") + "/about"}>ABOUT</a>
     <a class="navigation_hover_link" href={import.meta.env.BASE_URL.replace(/\/$/, "") + "/#events"}>EVENTS</a>
     <a class="navigation_hover_link" href="https://www.instagram.com/kinddesign.cph/" target="_blank" rel="noreferrer">TALKS</a>
-    <a class="navigation_hover_link" href="https://www.instagram.com/kinddesign.cph/" target="_blank" rel="noreferrer">KINDLIFE</a>
+   <a class="navigation_hover_link" href="/kindlife/">KINDLIFE</a>
     <a class="navigation_hover_link" href="https://www.instagram.com/kinddesign.cph/" target="_blank" rel="noreferrer">INSTAGRAM</a>
   </nav>
 </header>
@@ -71,6 +71,33 @@
     white-space: nowrap;
     text-decoration: none;
   }
+  /* KINDLIFE MOVING GRADIENT */
+
+.site_header.kindlife_header {
+  background: linear-gradient(
+    110deg,
+    #d9e6a8,
+    #d8f0eb,
+    #f5f0e0,
+    #c9d8c0,
+    #3b1b20,
+    #d9e6a8
+  );
+  background-size: 300% 300%;
+  animation: kindlifeGradient 18s ease infinite;
+}
+
+@keyframes kindlifeGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
   @media (max-width: 900px) {
     .navigation {
