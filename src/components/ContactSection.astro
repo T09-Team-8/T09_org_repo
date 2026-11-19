@@ -16,22 +16,106 @@ const social = { instagram: 'https://www.instagram.com/kinddesign.cph/', linkedi
   </div>
 </section>
 <style>
-  .contact { display: grid; grid-template-columns: 62.88% 37.12%; box-sizing: border-box; width: 100%; height: calc(100svh - var(--site-header-height)); min-height: 0; background: #2b0f13; color: #fff; font-family: Inter, Arial, sans-serif; }
-  .contact_connect { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; box-sizing: border-box; padding: 72px clamp(32px, 4.76vw, 80px); background: #caeaf8; color: #000; }
-  .contact_column h2, .contact_find h2 { margin: 0; font-size: clamp(20px, 2.14vw, 36px); font-weight: 700; line-height: 40px; }
-  .contact_column p, .contact_find p { margin: 0; font-size: clamp(15px, 1.43vw, 24px); line-height: 40px; }
-  .contact_find { box-sizing: border-box; padding: 72px clamp(30px, 3.8vw, 64px); background: #2b0f13; }
-  .contact_find nav { display: grid; gap: 33px; margin-top: 78px; }
-  .contact_find a { width: fit-content; color: #fff; font-size: 14.5px; font-weight: 600; text-decoration: none; }
-  .contact_find a:focus-visible { outline: 2px solid #c5e9fb; outline-offset: 4px; }
-  @media (min-width: 761px) {
-    .contact { height: 504px; }
-    .contact_connect { display: block; padding: 0; }
-    .contact_column { position: absolute; top: 72px; }
-    .contact_column:first-child { left: 80px; width: 320px; }
-    .contact_column:nth-child(2) { left: 520px; width: 360px; }
-    .contact_find { padding: 72px 0 0 64px; }
+  .contact {
+    display: grid;
+    grid-template-columns: minmax(0, 62.88fr) minmax(0, 37.12fr);
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 504px;
+    background: #2b0f13;
+    color: #fff;
+    font-family: Inter, Arial, sans-serif;
   }
-  @media (max-width: 760px) { .contact { height: auto; min-height: 0; grid-template-columns: 1fr; } .contact_connect { min-height: 240px; padding: 44px 24px; gap: 20px; } .contact_find { min-height: 300px; padding: 44px 24px; } .contact_find nav { gap: 20px; margin-top: 30px; } }
+
+  .contact_connect {
+    display: grid;
+    grid-template-columns: minmax(0, 320px) minmax(0, 360px);
+    align-content: start;
+    gap: clamp(24px, 7.14vw, 120px);
+    box-sizing: border-box;
+    padding: 72px clamp(24px, 4.76vw, 80px);
+    background: #caeaf8;
+    color: #000;
+  }
+
+  .contact_column {
+    min-width: 0;
+  }
+
+  .contact_column h2,
+  .contact_find h2 {
+    margin: 0;
+    font-size: clamp(20px, 2.14vw, 36px);
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  .contact_column p,
+  .contact_find p {
+    margin: 0;
+    font-size: clamp(15px, 1.43vw, 24px);
+    line-height: 1.55;
+  }
+
+  .contact_find {
+    box-sizing: border-box;
+    padding: 72px clamp(24px, 3.8vw, 64px);
+    background: #2b0f13;
+  }
+
+  .contact_find nav {
+    display: grid;
+    gap: 33px;
+    margin-top: 78px;
+  }
+
+  .contact_find a {
+    width: fit-content;
+    color: #fff;
+    font-size: 14.5px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .contact_find a:focus-visible {
+    outline: 2px solid #c5e9fb;
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 900px) {
+    .contact {
+      grid-template-columns: minmax(0, 1fr);
+      min-height: 0;
+    }
+
+    .contact_connect {
+      min-height: 240px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(20px, 5vw, 48px);
+      padding: 44px clamp(24px, 6vw, 64px);
+    }
+
+    .contact_find {
+      min-height: 300px;
+      padding: 44px clamp(24px, 6vw, 64px);
+    }
+
+    .contact_find nav {
+      gap: 20px;
+      margin-top: 30px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact_connect {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 28px;
+      padding-block: 36px;
+    }
+
+    .contact_find {
+      padding-block: 36px;
+    }
+  }
 </style>
 

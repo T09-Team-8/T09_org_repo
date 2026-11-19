@@ -78,6 +78,13 @@ const {
     .hero { height: 903px; }
   }
 
+  @media (min-width: 701px) and (max-width: 900px) {
+    h1 {
+      top: clamp(80px, 12vh, 138px);
+      left: clamp(24px, 5vw, 80px);
+      font-size: clamp(72px, 11vw, 100px);
+    }
+  }
   @media (max-width: 700px) {
     .hero {
       height: calc(100svh - 94px);

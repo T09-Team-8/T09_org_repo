@@ -213,6 +213,21 @@ const lumaHref = 'https://luma.com/user/kinddesign';
     }
   }
 
+  @media (min-width: 761px) and (max-width: 900px) {
+    .community {
+      height: auto;
+      min-height: 0;
+    }
+
+    .community_inner {
+      height: auto;
+      padding: 80px 6vw;
+    }
+
+    .community_gallery {
+      grid-template-rows: repeat(2, minmax(220px, 38vw));
+    }
+  }
   @media (max-width: 760px) {
     .community {
       height: auto;
