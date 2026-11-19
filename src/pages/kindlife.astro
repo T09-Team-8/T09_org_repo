@@ -47,14 +47,14 @@ const carouselThree = [
 
         <!-- HANNA TALK IMAGE – PLACED INSIDE HERO -->
         <div class="hero_feature">
-          <a class="hero_image" href="/events/" aria-label="Explore upcoming events">
+          <a class="hero_image" href={import.meta.env.BASE_URL + "events/"} aria-label="Explore upcoming events">
             <img
-              src="/images/hanna-talk.jpg"
+              src={import.meta.env.BASE_URL + "images/hanna-talk.jpg"}
               alt="Hanna presenting Designing for an Ambivalent Web"
             />
           </a>
 
-          <a class="hero_event_link" href="/events/">
+          <a class="hero_event_link" href={import.meta.env.BASE_URL + "events/"}>
             FOR UPCOMING<br />EVENTS ↗
           </a>
         </div>
@@ -169,7 +169,7 @@ const carouselThree = [
 
       <img
         class="be-kind-animation"
-        src={import.meta.env.BASE_URL.replace(/\/$/, '') + '/gifs/be-kind-animation.gif'}
+        src={import.meta.env.BASE_URL + "gifs/be-kind-animation.gif"}
         alt=""
         aria-hidden="true"
       />
