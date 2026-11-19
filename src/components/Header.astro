@@ -1,8 +1,8 @@
 
-<header class:list={["site_header", Astro.url.pathname.startsWith(import.meta.env.BASE_URL + "kindlife") && "kindlife_header"]}>
-  <a class="brand" href={import.meta.env.BASE_URL} aria-label="Kind Design home">
+<header class:list={["site_header", Astro.url.pathname.startsWith("/T09_org_repo/kindlife") && "kindlife_header"]}>
+  <a class="brand" href="/T09_org_repo/" aria-label="Kind Design home">
     <img
-      src={import.meta.env.BASE_URL + "kind-design-logo.webp"}
+      src="/T09_org_repo/kind-design-logo.webp"
       alt="Kind Design"
       width="152"
       height="93"
@@ -10,10 +10,10 @@
   </a>
 
   <nav class="navigation" aria-label="Main navigation">
-    <a class="navigation_hover_link" href={import.meta.env.BASE_URL + "about/"}>ABOUT</a>
-    <a class="navigation_hover_link" href={import.meta.env.BASE_URL + "event/"}>EVENTS</a>
+    <a class="navigation_hover_link" href="/T09_org_repo/about/">ABOUT</a>
+    <a class="navigation_hover_link" href="/T09_org_repo/event/">EVENTS</a>
     <a class="navigation_hover_link" href="https://www.instagram.com/kinddesign.cph/" target="_blank" rel="noreferrer">TALKS</a>
-   <a class="navigation_hover_link" href={import.meta.env.BASE_URL + "kindlife/"}>KINDLIFE</a>
+   <a class="navigation_hover_link" href="/T09_org_repo/kindlife/">KINDLIFE</a>
     <a class="navigation_hover_link" href="https://www.instagram.com/kinddesign.cph/" target="_blank" rel="noreferrer">INSTAGRAM</a>
   </nav>
 </header>
