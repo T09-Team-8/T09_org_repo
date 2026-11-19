@@ -3,12 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import Eventcalender from '../components/Eventcalender.astro';
 import Eventcalenderhero from '../components/Eventcalenderhero.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import Corrections from '../components/Corrections.astro';
 ---
 
 <Layout>
   <Eventcalenderhero />
   <main class="event_page">
     <Eventcalender />
+    <Corrections variant="event" />
     <SiteFooter />
   </main>
 </Layout>
