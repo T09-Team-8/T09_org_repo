@@ -516,6 +516,10 @@
       line-height: 1.35;
     }
 
+    .community_collage_message p span {
+      font-size: inherit;
+    }
+
     .community_collage_image_discussion,
     .community_collage_image_portrait,
     .community_collage_image_abstract,
@@ -615,281 +619,10 @@
     }
   }
 
-  @media (max-width: 600px) {
-    .about_hero {
-      height: calc(100svh - 94px);
-      min-height: 0;
-    }
 
-    .about_hero_image {
-      height: 100%;
-      object-position: 52% center;
-    }
-    .community_collage {
-      grid-template-rows: auto 32vh 34vh;
-    }
 
-    .community_collage_left {
-      min-height: 0;
-    }
 
-    .community_collage_wordmark_frame {
-      width: min(90%, 420px);
-      height: 132px;
-      margin: 26px auto 18px;
-    }
-
-    .community_collage_message {
-      margin-top: 0;
-      padding: 22px 24px 28px;
-    }
-
-    .community_collage_message h1 {
-      margin-bottom: 12px;
-      font-size: 38px;
-    }
-
-    .community_collage_message p {
-      font-size: 18px;
-    }
-
-    .community_collage_image_portrait,
-    .community_collage_image_arches {
-      display: none;
-    }
-
-    .community_collage_image_abstract {
-      grid-column: 2;
-      grid-row: 3;
-    }
-
-    .community_collage_image_discussion {
-      grid-column: 1 / -1;
-      grid-row: 2;
-    }
-
-    .about_story {
-      min-height: 0;
-      padding: 48px 24px;
-    }
-
-    .about_story h2 {
-      margin-bottom: 20px;
-      font-size: 30px;
-    }
-
-    .about_story_copy p {
-      margin-bottom: 14px;
-      font-size: 18px;
-    }
-
-    .join_community {
-      display: flex;
-      height: auto;
-      min-height: 0;
-      flex-direction: column;
-    }
-
-    .join_community_image {
-      position: relative;
-      top: auto;
-      left: auto;
-      width: 100%;
-      height: 62vw;
-      min-height: 250px;
-    }
-
-    .join_community_content {
-      position: relative;
-      inset: auto;
-      left: auto;
-      width: 100%;
-      height: auto;
-      min-height: 360px;
-    }
-
-    .join_community_content h2 {
-      top: 34px;
-      left: 30px;
-      width: auto;
-      font-size: 32px;
-      line-height: 1.35;
-    }
-
-    .events_and_about {
-      display: flex;
-      height: auto;
-      min-height: 760px;
-      flex-direction: column;
-    }
-
-    .events_and_about_content {
-      position: relative;
-      width: 100%;
-      padding: 58px 24px 0;
-    }
-
-    .events_and_about_description {
-      margin-bottom: 35px;
-    }
-
-    .events_and_about_visual {
-      position: relative;
-      top: auto;
-      right: auto;
-      align-self: center;
-      width: min(85vw, 400px);
-      margin: 36px 0 48px;
-    }
-
-    .about_contact {
-      min-height: 0;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 36px;
-      padding: 56px 24px;
-    }
-
-    .about_contact_item h2 {
-      font-size: 28px;
-      line-height: 34px;
-    }
-
-    .about_contact_item p {
-      font-size: 19px;
-      line-height: 1.4;
-    }
-
-    .about_footer {
-      grid-template-columns: 1fr;
-    }
-
-    .about_footer_brand,
-    .about_footer_contact {
-      min-height: 210px;
-      padding: 36px 24px;
-    }
-
-    .about_footer_logo {
-      margin: 0 0 4px;
-    }
-
-    .about_footer_contact h2 {
-      font-size: 29px;
-      line-height: 36px;
-    }
-
-    .about_footer_contact p {
-      margin-bottom: 26px;
-      font-size: 19px;
-    }
-
-    .about_footer_contact a {
-      margin-bottom: 18px;
-    }
-  }
-
-  @media (max-width: 760px) {
-    .community_collage {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-template-rows: auto repeat(2, minmax(160px, 56vw));
-    }
-
-    .community_collage_left {
-      grid-column: 1 / -1;
-      grid-row: 1;
-      min-height: 0;
-      padding: 0;
-    }
-
-    .community_collage_wordmark_frame {
-      width: min(88%, 420px);
-      height: clamp(112px, 28vw, 160px);
-      margin: 24px auto 16px;
-    }
-
-    .community_collage_message {
-      flex: initial;
-      padding: 24px;
-    }
-
-    .community_collage_message h1 {
-      margin-bottom: 12px;
-      font-size: clamp(32px, 8vw, 38px);
-    }
-
-    .community_collage_message p {
-      font-size: clamp(17px, 4.5vw, 19px);
-      line-height: 1.4;
-    }
-
-    .community_collage_image_discussion {
-      grid-column: 1;
-      grid-row: 2;
-    }
-    .community_collage_image_portrait {
-      grid-column: 2;
-      grid-row: 2;
-      display: block;
-    }
-    .community_collage_image_abstract {
-      grid-column: 1;
-      grid-row: 3;
-    }
-    .community_collage_image_arches {
-      grid-column: 2;
-      grid-row: 3;
-      display: block;
-    }
-
-    .events_and_about {
-      display: flex;
-      height: auto;
-      min-height: 0;
-      flex-direction: column;
-      padding-bottom: 24px;
-    }
-
-    .events_and_about_content {
-      position: relative;
-      inset: auto;
-      width: 100%;
-      box-sizing: border-box;
-      padding: 58px 24px 0;
-    }
-
-    .events_and_about_content h2 {
-      margin-bottom: 32px;
-    }
-
-    .events_and_about_description {
-      max-width: 38rem;
-      margin-bottom: 35px;
-    }
-
-    .events_and_about_links {
-      width: 100%;
-    }
-
-    .events_and_about_visual {
-      position: relative;
-      top: auto;
-      right: auto;
-      align-self: center;
-      width: min(85vw, 400px);
-      margin: 36px 0 24px;
-    }
-
-    .events_and_about_visual span {
-      left: 50%;
-      width: max-content;
-      max-width: 90%;
-      height: auto;
-      font-size: clamp(28px, 8vw, 48px);
-      transform: translateX(-50%);
-    }
-  }
-  @media (min-width: 761px) and (max-width: 900px) {
+  @media (min-width: 769px) and (max-width: 900px) {
     .events_and_about {
       display: flex;
       height: auto;
@@ -1033,5 +766,227 @@
       font-size: clamp(14px, 2vw, 18px);
       white-space: normal;
     }
+  }
+
+
+  @media (max-width: 768px) {
+    .about_hero {
+      height: clamp(220px, 66.67vw, 480px);
+      min-height: 0;
+    }
+
+    .about_hero_image {
+      height: 100%;
+      object-position: center 43%;
+    }
+
+    .community_collage {
+      display: flex;
+      height: auto;
+      min-height: 0;
+      flex-direction: column;
+      overflow: visible;
+    }
+
+    .community_collage_left {
+      position: relative;
+      inset: auto;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      min-height: 0;
+      padding: 24px;
+      background: var(--cream);
+    }
+
+    .community_collage_wordmark_frame {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: min(100%, 300px);
+      height: auto;
+      aspect-ratio: 300 / 170;
+      margin: 0 0 24px;
+    }
+
+    .community_collage_wordmark_outer,
+    .community_collage_wordmark_full {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      height: 100%;
+      transform: none;
+    }
+
+    .community_collage_wordmark {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: none;
+    }
+
+    .community_collage_message {
+      position: relative;
+      top: auto;
+      left: auto;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      height: auto;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
+      background: transparent;
+    }
+
+    .community_collage_message h1 {
+      position: static;
+      display: block;
+      width: auto;
+      height: auto;
+      margin: 0 0 24px;
+      padding: 0;
+      font-size: clamp(32px, 9.75vw, 38px);
+      line-height: 1.2;
+    }
+
+    .community_collage_message p {
+      position: static;
+      width: auto;
+      margin: 0;
+      font-size: clamp(18px, 4.6vw, 19px);
+      line-height: 1.4;
+    }
+
+    .community_collage_message p span {
+      font-size: inherit;
+    }
+
+    .community_collage_image_discussion,
+    .community_collage_image_portrait,
+    .community_collage_image_abstract,
+    .community_collage_image_arches {
+      position: relative;
+      inset: auto;
+      display: block;
+      width: calc(100% - 48px);
+      height: auto;
+      margin: 0 24px 16px;
+      object-fit: cover;
+    }
+
+    .community_collage_image_discussion { aspect-ratio: 342 / 389; }
+    .community_collage_image_portrait { aspect-ratio: 342 / 263; }
+    .community_collage_image_abstract { aspect-ratio: 342 / 331; }
+    .community_collage_image_arches {
+      aspect-ratio: 342 / 448;
+      margin-bottom: 24px;
+    }
+
+    .about_story {
+      min-height: 0;
+      padding: 48px 24px;
+    }
+
+    .about_story h2 {
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+
+    .about_story_copy p {
+      margin-bottom: 14px;
+      font-size: 18px;
+    }
+
+    .join_community {
+      display: flex;
+      height: auto;
+      min-height: 0;
+      flex-direction: column;
+    }
+
+    .join_community_image {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      height: 62vw;
+      min-height: 250px;
+    }
+
+    .join_community_content {
+      position: relative;
+      inset: auto;
+      left: auto;
+      width: 100%;
+      height: auto;
+      min-height: 360px;
+    }
+
+    .join_community_content h2 {
+      top: 34px;
+      left: 30px;
+      width: auto;
+      font-size: 32px;
+      line-height: 1.35;
+    }
+
+    .events_and_about {
+      display: flex;
+      height: auto;
+      min-height: 0;
+      flex-direction: column;
+      padding-bottom: 24px;
+    }
+
+    .events_and_about_content {
+      position: relative;
+      inset: auto;
+      width: 100%;
+      padding: 58px 24px 0;
+    }
+
+    .events_and_about_description { margin-bottom: 35px; }
+
+    .events_and_about_visual {
+      position: relative;
+      top: auto;
+      right: auto;
+      align-self: center;
+      width: min(85vw, 400px);
+      margin: 36px 0 48px;
+    }
+
+    .about_contact {
+      min-height: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 36px;
+      padding: 56px 24px;
+    }
+
+    .about_contact_item,
+    .about_contact_item:nth-child(2) {
+      width: auto;
+      height: auto;
+    }
+
+    .about_contact_item h2 { font-size: 28px; line-height: 34px; }
+    .about_contact_item p { font-size: 19px; line-height: 1.4; }
+
+    .about_footer { grid-template-columns: 1fr; }
+
+    .about_footer_brand,
+    .about_footer_contact {
+      min-height: 210px;
+      padding: 36px 24px;
+    }
+
+    .about_footer_logo { margin: 0 0 4px; }
+
+    .about_footer_contact h2 { font-size: 29px; line-height: 36px; }
+    .about_footer_contact p { margin-bottom: 26px; font-size: 19px; }
+    .about_footer_contact a { margin-bottom: 18px; }
   }
 </style>
