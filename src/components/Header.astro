@@ -1,5 +1,5 @@
 
-<header class:list={["site_header", Astro.url.pathname.startsWith("/kindlife") && "kindlife_header"]}>
+<header class:list={["site_header", Astro.url.pathname.startsWith(import.meta.env.BASE_URL + "kindlife") && "kindlife_header"]}>
   <a class="brand" href={import.meta.env.BASE_URL} aria-label="Kind Design home">
     <img
       src={import.meta.env.BASE_URL + "kind-design-logo.webp"}
