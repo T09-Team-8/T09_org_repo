@@ -12,7 +12,7 @@
 
   .about_hero {
     position: relative;
-    height: calc(100svh - 147px);
+    height: calc(100svh - var(--site-header-height));
     min-height: 0;
     overflow: hidden;
     background: #d8d6d0;
@@ -397,9 +397,9 @@
     text-decoration: none;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1400px) {
     .about_hero {
-      height: calc(100svh - 147px);
+      height: calc(100svh - var(--site-header-height));
       min-height: 0;
     }
 
@@ -434,7 +434,7 @@
       display: grid;
       height: auto;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-template-rows: auto 38vh 42vh 34vh;
+      grid-template-rows: auto minmax(240px, 38vw) minmax(260px, 42vw);
       overflow: visible;
     }
 
@@ -733,7 +733,7 @@
     }
   }
 
-  @media (min-width: 901px) {
+  @media (min-width: 1401px) {
     .about_hero {
       height: 924px;
     }
@@ -765,6 +765,56 @@
     .about_footer {
       height: 373px;
       min-height: 0;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 1700px) {
+    .join_community {
+      height: clamp(480px, 62vw, 700px);
+    }
+
+    .join_community_image {
+      left: 0;
+      width: 52%;
+    }
+
+    .join_community_content {
+      left: 52%;
+      width: 48%;
+      height: 100%;
+    }
+
+    .join_community_content h2 {
+      top: clamp(70px, 14vw, 170px);
+      left: clamp(24px, 5vw, 72px);
+      width: calc(100% - clamp(48px, 10vw, 144px));
+      font-size: clamp(27px, 4vw, 38px);
+      line-height: 1.35;
+    }
+
+    .about_page .button_community {
+      right: 24px;
+      bottom: 24px;
+      left: clamp(24px, 5vw, 72px);
+      width: auto;
+      height: auto;
+      font-size: clamp(14px, 2vw, 20px);
+      white-space: normal;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 700px) {
+    .about_contact {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+      padding: 48px 24px;
+    }
+
+    .about_contact_item,
+    .about_contact_item:nth-child(2) {
+      width: auto;
+      height: auto;
     }
   }
 </style>

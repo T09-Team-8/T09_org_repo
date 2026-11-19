@@ -1,0 +1,169 @@
+---
+const { variant = 'kindlife' } = Astro.props;
+---
+
+{variant === 'event' && (
+  <footer class="event_prototype_footer" aria-label="KindDesign footer">
+    <div class="event_footer_brand">
+      <a href="/" aria-label="Kind Design home">Kind Design</a>
+      <p>COMMUNITY / EVENTS / COLLABORATIONS</p>
+    </div>
+
+    <div class="event_footer_contact">
+      <img
+        class="event_footer_contact_background"
+        src="/images/about/footer-ornament.svg"
+        width="624"
+        height="373"
+        alt=""
+        aria-hidden="true"
+      />
+      <div class="event_footer_contact_copy">
+        <h2>FIND US</h2>
+        <p>Share, learn and build together.</p>
+        <nav aria-label="KindDesign social links">
+          <a href="https://www.instagram.com/kinddesign.cph/" target="_blank" rel="noreferrer">INSTAGRAM ↗</a>
+          <a href="https://www.linkedin.com/company/kinddesign-cph/" target="_blank" rel="noreferrer">LINKEDIN ↗</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+)}
+
+<style is:global>
+  .kindlife + .about_footer {
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  .event_prototype_footer + .site_footer {
+    height: 147px;
+  }
+</style>
+
+<style>
+  .event_prototype_footer {
+    position: relative;
+    display: grid;
+    grid-template-columns: 64.17% 35.83%;
+    width: 100%;
+    height: 373px;
+    overflow: hidden;
+    color: #fff;
+    background: #f5f0e0;
+  }
+
+  .event_footer_brand {
+    box-sizing: border-box;
+    padding: 49px 0 0 46px;
+    background: rgb(0 0 0 / 90%);
+  }
+
+  .event_footer_brand > a {
+    display: inline-block;
+    padding: 0 5px;
+    background: #000;
+    color: #fff;
+    font: 400 31px/36px Questrial, sans-serif;
+    text-decoration: none;
+  }
+
+  .event_footer_brand > p {
+    position: relative;
+    left: -8px;
+    margin: 4.5px 0 0;
+    font: 400 13.535px/1.2 Inter, Arial, sans-serif;
+  }
+
+  .event_footer_contact {
+    position: relative;
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 76px 35px 24px;
+    overflow: hidden;
+    background: #f5f0e0;
+    color: #fff;
+  }
+
+  .event_footer_contact_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    display: block;
+    width: 624px;
+    height: 373px;
+  }
+
+  .event_footer_contact_copy {
+    position: relative;
+    z-index: 1;
+  }
+
+  .event_footer_contact h2 {
+    margin: 0;
+    font: 700 36px/40px Inter, Arial, sans-serif;
+  }
+
+  .event_footer_contact_copy > p {
+    margin: 0 0 37px;
+    font: 400 24px/40px Inter, Arial, sans-serif;
+  }
+
+  .event_footer_contact nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 34px;
+    margin-left: 7px;
+  }
+
+  .event_footer_contact nav a {
+    color: #fff;
+    font: 600 14.576px/18px Inter, Arial, sans-serif;
+    text-decoration: none;
+  }
+
+  .event_footer_contact nav a:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 900px) {
+    .event_prototype_footer {
+      grid-template-columns: 1fr 1fr;
+      height: auto;
+      min-height: 373px;
+    }
+
+    .event_footer_brand {
+      min-height: 373px;
+      padding-left: 32px;
+    }
+
+    .event_footer_contact {
+      min-height: 373px;
+      padding-right: 24px;
+      padding-left: 24px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .event_prototype_footer {
+      grid-template-columns: 1fr;
+    }
+
+    .event_footer_brand {
+      min-height: 160px;
+      padding: 36px 24px;
+    }
+
+    .event_footer_contact {
+      min-height: 300px;
+      padding: 46px 24px;
+    }
+
+    .event_footer_contact_background {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+</style>
